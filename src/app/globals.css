@@ -1,0 +1,72 @@
+@import url("https://googleapis.com");
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  /* ==========================================================================
+     PRIMARY COLOR PALETTE (#06B6D4)
+     ========================================================================== */
+  --color-primary-50: #ecfeff;
+  --color-primary-100: #cffafe;
+  --color-primary-200: #a5f3fc;
+  --color-primary-300: #67e8f9;
+  --color-primary-400: #22d3ee;
+  --color-primary-500: #06b6d4;
+  --color-primary-600: #0891b2;
+  --color-primary-700: #0e7490;
+  --color-primary-800: #155e75;
+  --color-primary-900: #164e63;
+  --color-primary-950: #112036; /*main PRIMARY COLOR PALETTE*/
+  --color-primary-975: #0d1c32; /*main PRIMARY COLOR PALETTE*/
+  /* ==========================================================================
+     SECONDARY COLOR PALETTE (#14B8A6)
+     ========================================================================== */
+  --color-secondary-50: #f0fdfa;
+  --color-secondary-100: #ccfbf1;
+  --color-secondary-200: #99f6e4;
+  --color-secondary-300: #5eead4;
+  --color-secondary-400: #2dd4bf;
+  --color-secondary-500: #14b8a6; /*main SECONDARY COLOR PALETTE*/
+  --color-secondary-600: #0d9488;
+  --color-secondary-700: #0f766e;
+  --color-secondary-800: #115e59;
+  --color-secondary-900: #134e4a;
+  --color-secondary-950: #042f2e;
+
+  /* ==========================================================================
+     TERTIARY COLOR PALETTE (#00E5FF)
+     ========================================================================== */
+  --color-tertiary-50: #e6fdff;
+  --color-tertiary-100: #b3faff;
+  --color-tertiary-200: #80f6ff;
+  --color-tertiary-300: #4df2ff;
+  --color-tertiary-400: #1aefff;
+  --color-tertiary-500: #00e5ff; /* main TERTIARY COLOR PALETTE*/
+  --color-tertiary-600: #00b8cc;
+  --color-tertiary-700: #008a99;
+  --color-tertiary-800: #005c66;
+  --color-tertiary-900: #002e33;
+  --color-tertiary-950: #00171a;
+
+  /* ==========================================================================
+     NEUTRAL COLOR PALETTE (#0A192F)
+     ========================================================================== */
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #0a192f; /*main*/
+
+  /* ==========================================================================
+     TYPOGRAPHY
+     ========================================================================== */
+  --font-headline: "Manrope", sans-serif;
+  --font-label: "Geist", sans-serif;
+  --font-tittle: "Space Mono", monospace;
+}

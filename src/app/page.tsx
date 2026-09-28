@@ -10,14 +10,14 @@ import { ContactSection } from "../components/contact";
 export default function Home() {
   return (
     <>
-    <Navbar/>
-    <HeroSection/>
-    <AboutSection/>
-    <SkillsSection/>
-    <PortofolioSection/>
-    <ExperienceSection/>
-    <TestimonialsSection/>
-    <ContactSection/>
+      <Navbar />
+      <HeroSection />
+      <AboutSection />
+      <SkillsSection />
+      <PortofolioSection />
+      <ExperienceSection />
+      <TestimonialsSection />
+      <ContactSection />
     </>
   );
 }

@@ -43,12 +43,14 @@ export function HeroSection() {
             </h2>
 
             <div className="flex gap-4 mt-6">
+               <a href="#portofolioSection">
               <button className="btn btn-info font-label">
                 VIEW PORTFOLIO{" "}
                 <span>
                   <img src="/panah.svg" alt="row" />
                 </span>
               </button>
+               </a>
 
               <button className="flex gap-2 w-max h-max p-2.25 rounded-md font-label bg-primary-900 hover:opacity-70 text-primary-100 cursor-pointer">
                 Contact Me <img src="/contact-me-icon.svg" alt="contactme" />

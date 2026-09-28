@@ -23,17 +23,17 @@ export function Navbar() {
     {
       label: "experience",
       tittle: "Experience",
-      url: "/landing-page",
+      url: "#experienceSection",
     },
     {
       label: "testimonials",
       tittle: "Testimonials",
-      url: "/landing-page",
+      url: "#testimonialsSection",
     },
     {
       label: "contact",
       tittle: "Contact",
-      url: "/landing-page",
+      url: "#contactSection",
     },
   ];
 
@@ -102,7 +102,7 @@ export function Navbar() {
               Jovin Najwan
             </h1>
             <h2 className="font-label text-[#4FDBC8] font-semibold text-[11px]">
-              FULL-STACK <br /> ARCHITECT
+              FULL-STACK <br /> DEVELOPER
             </h2>
           </div>
         </div>

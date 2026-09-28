@@ -10,9 +10,27 @@ interface ContactMe {
 const contactMe: ContactMe[] = [
   {
     label: "email",
-    imgContact: '/contact-email-icon.svg" alt="logo email',
+    imgContact: "/contact-email-icon.svg",
     contact: "Email Inquiry",
-    isiContact: "ovin.najwan@gmail.com",
+    isiContact: "jovin.najwan@gmail.com",
+  },
+  {
+    label: "linkedin",
+    imgContact: "/contact-linkedin-icon.svg",
+    contact: "LinkedIn Profile",
+    isiContact: "linkedin.com/in/jovin-najwan-053870289",
+  },
+  {
+    label: "github",
+    imgContact: "/contact-github-icon.svg",
+    contact: "GitHub Repositories",
+    isiContact: "github.com/muzuijovin",
+  },
+  {
+    label: "location",
+    imgContact: "/contact-lokasi-icon.svg",
+    contact: "Primary Location",
+    isiContact: "Indonesia, Jawa Barat",
   },
 ];
 
@@ -52,7 +70,10 @@ export function ContactSection() {
         <div className="grid gap-5 grid-cols-2 lg:grid-cols-4">
           {contactMe.map((item) => {
             return (
-              <div key={item?.label} className="rounded-md bg-primary-950 h-max p-6">
+              <div
+                key={item?.label}
+                className="rounded-md bg-primary-950 h-max p-6"
+              >
                 <div className=" mb-8 flex justify-center items-center w-11 h-11 bg-primary-900 rounded-md">
                   <img src={item?.imgContact} alt="logo email" />
                 </div>
@@ -66,6 +87,12 @@ export function ContactSection() {
               </div>
             );
           })}
+        </div>
+
+        <div className="p-12 bg-primary-950 drop-shadow-xl flex justify-between">
+          <div>
+            <h1 className="font-headline ">Ready to bring high-performance ideas to life?</h1>
+          </div>
         </div>
       </section>
     </>

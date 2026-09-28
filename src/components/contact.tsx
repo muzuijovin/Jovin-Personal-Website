@@ -5,6 +5,7 @@ interface ContactMe {
   imgContact: string;
   contact: string;
   isiContact: string;
+  link: string;
 }
 
 const contactMe: ContactMe[] = [
@@ -13,24 +14,28 @@ const contactMe: ContactMe[] = [
     imgContact: "/contact-email-icon.svg",
     contact: "Email Inquiry",
     isiContact: "jovin.najwan@gmail.com",
+    link: "mail.google.com",
   },
   {
     label: "linkedin",
     imgContact: "/contact-linkedin-icon.svg",
     contact: "LinkedIn Profile",
     isiContact: "linkedin.com/in/jovin-najwan-053870289",
+    link: "linkedin.com/in/jovin-najwan-053870289",
   },
   {
     label: "github",
     imgContact: "/contact-github-icon.svg",
     contact: "GitHub Repositories",
     isiContact: "github.com/muzuijovin",
+    link: "github.com/muzuijovin",
   },
   {
     label: "location",
     imgContact: "/contact-lokasi-icon.svg",
     contact: "Primary Location",
     isiContact: "Indonesia, Jawa Barat",
+    link: "https://www.google.com/maps",
   },
 ];
 
@@ -47,51 +52,103 @@ export function ContactSection() {
           </h1>
         </div>
 
-        <div className="flex p-10 justify-between bg-primary-950 h-max rounded-md mb-5">
-          <div className="flex gap-2 items-center">
-            <LuDot className=" w-3 h-3 bg-[#4FDBC8]" />
-            <div>
-              <h3 className="font-label font-semibold text-xs text-[#4FDBC8]">
-                DIRECT COORDINATES & STATUS
-              </h3>
-              <h1 className="font-headline font-semibold text-[20px] text-[#D6E3FF]">
-                Currently Available for Engineering Roles & Contracts
-              </h1>
-            </div>
-          </div>
-          <div className="flex gap-3">
-            <img src="checklist-icon.svg" alt="centang" className="w-4 h-4" />
-            <p className="font-label font-medium text-xs text-[#BCC9CD]">
-              Worldwide Remote • Full-Time / Project Sprints
-            </p>
-          </div>
-        </div>
-
-        <div className="grid gap-5 grid-cols-2 lg:grid-cols-4">
-          {contactMe.map((item) => {
-            return (
-              <div
-                key={item?.label}
-                className="rounded-md bg-primary-950 h-max p-6"
-              >
-                <div className=" mb-8 flex justify-center items-center w-11 h-11 bg-primary-900 rounded-md">
-                  <img src={item?.imgContact} alt="logo email" />
-                </div>
-
-                <h3 className="font-label font-semibold text-xs text-[#BCC9CD]">
-                  {item?.contact}
-                </h3>
-                <h2 className="font-label font-semibold text-[#D6E3FF] text-sm">
-                  {item?.isiContact}
-                </h2>
+        <div className="grid grid-cols-[60%_40%]">
+          <div className="p-2">
+            <form action="" className="p-10 bg-primary-950 rounded-md w-full">
+              <div className="flex gap-5">
+                <fieldset className="fieldset w-full">
+                  <label
+                    className="label font-label font-medium text-[12px] text-[#D6E3FF]"
+                    htmlFor="name"
+                  >
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="input bg-primary-975 text-[#869397] font-label text-xs w-full"
+                    placeholder="Input your name"
+                  />
+                </fieldset>
+                <fieldset className="fieldset w-full">
+                  <label
+                    className="label font-label font-medium text-[12px] text-[#D6E3FF]"
+                    htmlFor="name"
+                  >
+                    Your Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="input bg-primary-975 text-[#869397] font-label text-xs w-full"
+                    placeholder="Input your email"
+                  />
+                </fieldset>
               </div>
-            );
-          })}
-        </div>
 
-        <div className="p-12 bg-primary-950 drop-shadow-xl flex justify-between">
-          <div>
-            <h1 className="font-headline ">Ready to bring high-performance ideas to life?</h1>
+              <fieldset className="fieldset w-full mt-6">
+                <label
+                  className="label font-label font-medium text-[12px] text-[#D6E3FF]"
+                  htmlFor="name"
+                >
+                  Project Subject
+                </label>
+                <input
+                  type="text"
+                  id="projectSubject"
+                  className="input bg-primary-975 text-[#869397] font-label text-xs w-full"
+                  placeholder="Full-Stack Web Application / Architecture Consultation"
+                />
+              </fieldset>
+
+              <fieldset className="fieldset w-full mt-6">
+                <label
+                  className="label font-label font-medium text-[12px] text-[#D6E3FF]"
+                  htmlFor="name"
+                >
+                  Project Scope & Details
+                </label>
+                <input
+                  type="text"
+                  id="projectSubject"
+                  className="input bg-primary-975 text-[#869397] font-label text-xs w-full h-20"
+                  placeholder="Describe your architecture requirements, target deadlines, and technical specifications..."
+                />
+              </fieldset>
+            </form>
+          </div>
+          <div className="p-2">
+            <div className="p-10 bg-primary-950 rounded-md w-full">
+              <h1 className="font-label font-semibold text-[#4FDBC8] text-xs">
+                DIRECT COORDINATES
+              </h1>
+
+              <div>
+                {contactMe.map((item) => {
+                  return (
+                    <div
+                      key={item?.label}
+                      className="rounded-md bg-primary-950 h-max flex gap-3"
+                    >
+                      <div className=" mb-8 flex justify-center items-center w-11 h-11 bg-primary-900 rounded-md">
+                        <img src={item?.imgContact} alt="logo email" />
+                      </div>
+
+                      <div>
+                        <h3 className="font-label font-semibold text-xs text-[#BCC9CD]">
+                          {item?.contact}
+                        </h3>
+                        <a href={item?.link}>
+                          <h2 className="font-label font-semibold text-[#D6E3FF] text-sm">
+                            {item?.isiContact}
+                          </h2>
+                        </a>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>

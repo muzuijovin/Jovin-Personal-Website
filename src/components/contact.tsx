@@ -1,7 +1,5 @@
 import { contactMe } from "../data/data";
 
-
-
 export function ContactSection() {
   return (
     <>
@@ -78,6 +76,10 @@ export function ContactSection() {
                   placeholder="Describe your architecture requirements, target deadlines, and technical specifications..."
                 />
               </fieldset>
+
+              <div className="w-full flex justify-center mt-5">
+                <button className="btn btn-success w-xs">sent</button>
+              </div>
             </form>
           </div>
           <div className="p-2">

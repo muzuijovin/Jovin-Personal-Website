@@ -1,6 +1,5 @@
-import {  usingTools, starCase } from "../data/data";
+import { usingTools, starCase } from "../data/data";
 import { GoDotFill } from "react-icons/go";
-
 
 export function PortofolioSection() {
   return (
@@ -55,7 +54,7 @@ export function PortofolioSection() {
             })}
           </div>
 
-          <div className="absolute bottom-2 right-2 flex gap-3">
+          <div className="absolute bottom-2 right-2 flex flex-col md:flex-row gap-3">
             <div className="bg-primary-500 pl-2 pr-2 pt-1 pb-1 rounded-md">
               <h1 className="text-[#00424F] font-label font-semibold text-xs">
                 +35% Online Sales Increase

@@ -38,11 +38,11 @@ export function HeroSection() {
               </button>
             </div>
 
-            <div className="grid grid-cols-3 mt-10 rounded-xl">
+            <div className="px-3 grid grid-cols-1 gap-2 md:grid-cols-2 mt-10 rounded-xl lg:grid-cols-3 ">
               {pointPlus.map((item) => {
                 return (
-                  <div key={item?.label} className="w-49 h-18 rounded-lg bg-primary-950 flex items-center pl-3">
-                    <div>
+                  <div key={item?.label} className=" w-full h-18 rounded-lg bg-primary-950 flex items-center justify-center pl-3">
+                    <div className="flex flex-col justify-center items-center">
                       <h1 className="font-headline text-xl font-semibold text-[#4CD7F6]">
                         {item?.hsatu}
                       </h1>
@@ -56,7 +56,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div id="rightSideHero" className="p-20 md:pl-30 md:pr-20 md:pt-0">
+          <div id="rightSideHero" className=" p-5 md:p-20 md:pl-30 md:pr-20 md:pt-0">
             <div
               id="fullLayOut"
               className="group rounded-2xl overflow-hidden border border-white/5 shadow-[0_0_50px_-12px_rgba(79,219,200,0.15)]"

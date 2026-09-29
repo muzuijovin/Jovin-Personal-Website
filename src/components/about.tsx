@@ -1,4 +1,4 @@
-import {  aboutPoint } from "../data/data";
+import { aboutPoint } from "../data/data";
 export function AboutSection() {
   return (
     <>
@@ -37,14 +37,16 @@ export function AboutSection() {
               to impactful software engineering projects.
             </p>
 
-            <div className="flex gap-3 mt-10">
+            <div className="grid grid-cols-2 gap-3 mt-10 lg:px-10 lg:grid-cols-4">
               {aboutPoint.map((item) => {
                 return (
                   <div
                     key={item?.tittle}
-                    className="p-3 rounded-md bg-primary-900 hover:bg-primary-800 cursor-pointer"
+                    className="w-full flex justify-center"
                   >
-                    <h3 className="text-xs text-primary-500">{item?.isi}</h3>
+                    <div className="flex justify-center items-center w-full p-3 rounded-md bg-primary-900 hover:bg-primary-800 cursor-pointer">
+                      <h3 className="text-xs text-primary-500">{item?.isi}</h3>
+                    </div>
                   </div>
                 );
               })}

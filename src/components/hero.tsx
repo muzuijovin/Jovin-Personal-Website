@@ -6,7 +6,7 @@ export function HeroSection() {
   
   return (
     <>
-      <section id="heroSection" className="bg-primary-975 h-max p-12">
+      <section id="heroSection" className="bg-primary-975 h-max p-12  bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]">
         <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] ">
           <div id="leftSideHero">
             <p className="font-label text-xs text-[#4FDBC8]">

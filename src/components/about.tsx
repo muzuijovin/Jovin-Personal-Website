@@ -2,7 +2,7 @@ import { aboutPoint } from "../data/data";
 export function AboutSection() {
   return (
     <>
-      <section id="aboutSection" className="h-max bg-[#041329] p-12">
+      <section id="aboutSection" className="h-max bg-[#041329] p-12 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]">
         <h3 className="font-label text-[#4FDBC8] text-xs">
           01 / PROFILE NARRATIVE ----
         </h3>

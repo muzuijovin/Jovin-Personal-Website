@@ -6,7 +6,7 @@ export function PortofolioSection() {
     <>
       <section
         id="portofolioSection"
-        className="h-max p-12 bg-[#041329] transition-"
+        className="h-max p-12 bg-[#041329] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]"
       >
         <div className="flex justify-between items-center">
           <div>

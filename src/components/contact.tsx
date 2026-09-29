@@ -3,7 +3,7 @@ import { contactMe } from "../data/data";
 export function ContactSection() {
   return (
     <>
-      <section id="contactSection" className="h-max bg-primary-975 p-12">
+      <section id="contactSection" className="h-max bg-primary-975 p-12 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]">
         <div className="mb-16">
           <h3 className="font-label text-[#4FDBC8] text-xs">
             06 / CONNECT ----

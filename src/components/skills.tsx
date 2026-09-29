@@ -70,13 +70,13 @@ export function SkillsSection() {
                     max="100"
                   ></progress>
                   <div className="mt-5 flex gap-3">
-                    <h4 className="text-[#BCC9CD] text-[9px] font-semibold font-label bg-primary-900 p-1 rounded-sm">
+                    <h4 className="text-[#BCC9CD] text-[9px] font-semibold font-label bg-primary-900 p-1 rounded-sm cursor-pointer">
                       {item?.kolompertama}
                     </h4>
-                    <h4 className="text-[#BCC9CD] text-[9px] font-semibold font-label bg-primary-900 p-1 rounded-sm">
+                    <h4 className="text-[#BCC9CD] text-[9px] font-semibold font-label bg-primary-900 p-1 rounded-sm cursor-pointer">
                       {item?.kolomdua}
                     </h4>
-                    <h4 className="text-[#BCC9CD] text-[9px] font-semibold font-label bg-primary-900 p-1 rounded-sm">
+                    <h4 className="text-[#BCC9CD] text-[9px] font-semibold font-label bg-primary-900 p-1 rounded-sm cursor-pointer">
                       {item?.kolomtiga}
                     </h4>
                   </div>
@@ -95,7 +95,7 @@ export function SkillsSection() {
               return (
                 <div
                   key={item?.title}
-                  className="p-2 bg-primary-950 hover:opacity-65 flex items-center justify-center rounded-md"
+                  className="p-2 bg-primary-950 hover:opacity-65 flex items-center justify-center rounded-md cursor-pointer"
                 >
                   <h1 className="font-label text-[9px] font-semibold text-[#D6E3FF]">
                     {item?.box}

@@ -1,65 +1,12 @@
+import { UsingTools, usingTools, StarCase, starCase } from "../data/data";
 import { GoDotFill } from "react-icons/go";
 
-export function PortofolioSection() {
-  interface UsingTools {
-    tittle: string;
-    bahasaProgram: string;
-  }
+interface SkillsSectionProps {
+  usingData: UsingTools;
+  starData: StarCase; // Mengambil title dan box dari TechCloud
+}
 
-  interface StarCase {
-    tittle: string;
-    logo: string;
-    paragraph: string;
-    starcase: string;
-    titlestar: string;
-  }
-
-  const usingTools: UsingTools[] = [
-    {
-      tittle: "bahasa program",
-      bahasaProgram: "React",
-    },
-    {
-      tittle: "bahasa program",
-      bahasaProgram: "Tailwind",
-    },
-  ];
-
-  const starCase: StarCase[] = [
-    {
-      tittle: "SITUATION",
-      logo: "S",
-      paragraph:
-        "XYZ Retail, an established retail company, sought to expand into e- commerce to reach a wider audience and streamline its sales processes. They needed a scalable, user-friendly platform to support both desktop and mobile users with features like product browsing, user reviews, secure checkout, and real-time inventory updates.",
-      starcase: "logo-starcase-satu.svg",
-      titlestar: "Retail Digital Expansion",
-    },
-    {
-      tittle: "TASK",
-      logo: "T",
-      paragraph:
-        "I was responsible for building the front-end and back-end components of the platform, ensuring seamless integration with the client’s inventory and payment systems. The project goal was to create an efficient, high- performing application with a smooth user experience.",
-      starcase: "logo-starcase-dua.svg",
-      titlestar: "Full-Stack Ownership",
-    },
-    {
-      tittle: "ACTION",
-      logo: "A",
-      paragraph:
-        "Using React for the front-end, I designed a responsive, intuitive UI focused on user engagement and easy navigation. On the back end, I developed RESTful APIs with Node.js and MongoDB for data management. Additionally, I integrated the platform with AWS to optimize loading times and set up a CI/CD pipeline for faster deployment and testing. I worked closely with designers and QA to address usability and accessibility standards.",
-      starcase: "logo-starcase-tiga.svg",
-      titlestar: "React, AWS & CI/CD Pipeline",
-    },
-    {
-      tittle: "RESULT",
-      logo: "R",
-      paragraph:
-        "The project was completed on time, leading to a 35% increase in online sales within the first three months. User feedback highlighted the site's speed and ease of use, and the client reported a substantial reduction in manual inventory management tasks.",
-      starcase: "logo-starcase-empat.svg",
-      titlestar: "Delivered On Schedule",
-    },
-  ];
-
+export function PortofolioSection({usingData, starData}:SkillsSectionProps) {
   return (
     <>
       <section
@@ -100,7 +47,10 @@ export function PortofolioSection() {
           <div className="absolute bottom-2 left-2 flex gap-3">
             {usingTools.map((item) => {
               return (
-                <div key={item?.bahasaProgram} className="bg-[#010E24] p-2 rounded-md">
+                <div
+                  key={item?.bahasaProgram}
+                  className="bg-[#010E24] p-2 rounded-md"
+                >
                   <h1 className="text-[#4CD7F6] text-[10px] font-label font-semibold">
                     {item?.bahasaProgram}
                   </h1>

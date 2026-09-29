@@ -1,41 +1,7 @@
-export function Navbar() {
-  interface ButtonNavbar {
-    label: string;
-    tittle: string;
-    url: string;
-  }
-  const buttonNavbar: ButtonNavbar[] = [
-    {
-      label: "about",
-      tittle: "About",
-      url: "#aboutSection",
-    },
-    {
-      label: "skills",
-      tittle: "Skills",
-      url: "#skillsSection",
-    },
-    {
-      label: "portofolio",
-      tittle: "Portofolio",
-      url: "#portofolioSection",
-    },
-    {
-      label: "experience",
-      tittle: "Experience",
-      url: "#experienceSection",
-    },
-    {
-      label: "testimonials",
-      tittle: "Testimonials",
-      url: "#testimonialsSection",
-    },
-    {
-      label: "contact",
-      tittle: "Contact",
-      url: "#contactSection",
-    },
-  ];
+import { ButtonNavbar, buttonNavbar } from "../data/data";
+
+
+export function Navbar({label, tittle, url}: ButtonNavbar) {
 
   return (
     <>

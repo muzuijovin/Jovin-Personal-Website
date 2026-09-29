@@ -1,28 +1,9 @@
+import { PointPlus, pointPlus } from "../data/data";
 import { GoDotFill } from "react-icons/go";
 
-export function HeroSection() {
-  interface PointPlus {
-    label: string;
-    hsatu: string;
-    paragraph: string;
-  }
-  const pointPlus: PointPlus[] = [
-    {
-      label: "kotak 1",
-      hsatu: "99.9%",
-      paragraph: "Architecture Reliability",
-    },
-    {
-      label: "kotak 2",
-      hsatu: "ES6+",
-      paragraph: "Modern Web Standard",
-    },
-    {
-      label: "kotak 3",
-      hsatu: "Type-Safe",
-      paragraph: "clean scalable",
-    },
-  ];
+export function HeroSection({label, hsatu, paragraph}: PointPlus) {
+  
+  
   return (
     <>
       <section id="heroSection" className="bg-primary-975 h-max p-12">

@@ -1,28 +1,5 @@
-export function AboutSection() {
-  interface AboutPoint {
-    tittle: string;
-    isi: string;
-  }
-
-  const aboutPoint: AboutPoint[] = [
-    {
-      tittle: "block 1",
-      isi: "Continuous Learning",
-    },
-    {
-      tittle: "block 2",
-      isi: "High Timeliness",
-    },
-    {
-      tittle: "block 3",
-      isi: "Meticulous Detail",
-    },
-    {
-      tittle: "block 4",
-      isi: "Agile Teamplay",
-    },
-  ];
-
+import { AboutPoint, aboutPoint } from "../data/data";
+export function AboutSection({ tittle, isi }: AboutPoint) {
   return (
     <>
       <section id="aboutSection" className="h-max bg-[#041329] p-12">
@@ -63,7 +40,10 @@ export function AboutSection() {
             <div className="flex gap-3 mt-10">
               {aboutPoint.map((item) => {
                 return (
-                  <div key={item?.tittle} className="p-3 rounded-md bg-primary-900 hover:bg-primary-800 cursor-pointer">
+                  <div
+                    key={item?.tittle}
+                    className="p-3 rounded-md bg-primary-900 hover:bg-primary-800 cursor-pointer"
+                  >
                     <h3 className="text-xs text-primary-500">{item?.isi}</h3>
                   </div>
                 );

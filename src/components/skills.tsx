@@ -1,131 +1,11 @@
-export function SkillsSection() {
-  interface SkillsLayout {
-    tittle: string;
-    img: string;
-    hsatu: string;
-    paragraph: string;
-    spansatu: string;
-    persensatu: string;
-    spandua: string;
-    persendua: string;
-    spantiga: string;
-    persentiga: string;
-    kolompertama: string;
-    kolomdua: string;
-    kolomtiga: string;
-  }
+import { SkillsLayout, skillsLayout, TechCloud, techCloud } from "../data/data";
 
-  interface TechCloud {
-    tittle: string;
-    box: string;
-  }
+interface SkillsSectionProps {
+  skillsData: SkillsLayout;
+  techData: TechCloud; // Mengambil title dan box dari TechCloud
+}
 
-  const skillsLayout: SkillsLayout[] = [
-    {
-      tittle: "front end",
-      img: "/skills-icon-satu.svg",
-      hsatu: "Front-End Engineering",
-      paragraph:
-        "Responsive, accessible user interfaces engineered with modern reactive frameworks and precise typography.",
-      spansatu: "React / Next.js",
-      persensatu: "95",
-      spandua: "TypeScript / ES6+",
-      persendua: "90",
-      spantiga: "Tailwind CSS / HTML5",
-      persentiga: "95",
-      kolompertama: "CSS3",
-      kolomdua: "DOM API",
-      kolomtiga: "Micro-interactions",
-    },
-    {
-      tittle: "Back end",
-      img: "/skills-icon-dua.svg",
-      hsatu: "Back-End Architecture",
-      paragraph:
-        "Fault-tolerant microservices, normalized relational schemas, and hardened REST endpoints.",
-      spansatu: "Node.js / Express.js",
-      persensatu: "92",
-      spandua: "PostgreSQL & Relational DBs",
-      persendua: "88",
-      spantiga: "RESTful APIs & Auth",
-      persentiga: "94",
-      kolompertama: "Django Awareness",
-      kolomdua: "Ruby on Rails",
-      kolomtiga: "Schema Design",
-    },
-    {
-      tittle: "tools and devops",
-      img: "/skills-icon-tiga.svg",
-      hsatu: "DevOps & Tooling",
-      paragraph:
-        "Automated deployment pipelines, cloud provisioning, version control, and rigorous API validation.",
-      spansatu: "Docker & Containers",
-      persensatu: "82",
-      spandua: "Git & GitHub Workflows",
-      persendua: "95",
-      spantiga: "AWS & CI/CD Pipelines",
-      persentiga: "80",
-      kolompertama: "Postman",
-      kolomdua: "Jenkins",
-      kolomtiga: "Vercel Edge",
-    },
-  ];
-
-  const techCloud: TechCloud[] = [
-    {
-      tittle: "tech1",
-      box: "React 18",
-    },
-    {
-      tittle: "tech2",
-      box: "Next.js 14",
-    },
-    {
-      tittle: "tech3",
-      box: "TypeScript",
-    },
-    {
-      tittle: "tech4",
-      box: "Node.js",
-    },
-    {
-      tittle: "tech5",
-      box: "Express.js",
-    },
-    {
-      tittle: "tech6",
-      box: "PostgreSQL",
-    },
-    {
-      tittle: "tech7",
-      box: "Tailwind CSS",
-    },
-    {
-      tittle: "tech8",
-      box: "Docker",
-    },
-    {
-      tittle: "tech9",
-      box: "Amazon Web Services",
-    },
-    {
-      tittle: "tech10",
-      box: "REST APIs",
-    },
-    {
-      tittle: "tech11",
-      box: "Git Versioning",
-    },
-    {
-      tittle: "tech12",
-      box: "CI/CD Pipelines",
-    },
-    {
-      tittle: "tech13",
-      box: "Postman Testing",
-    },
-  ];
-
+export function SkillsSection({ skillsData, techData }: SkillsSectionProps) {
   return (
     <>
       <section id="skillsSection" className="bg-primary-975 h-max p-12">
@@ -148,7 +28,10 @@ export function SkillsSection() {
         <div className="grid grid-cols-1 p-6 gap-10 md:grid-cols-3 mt-12">
           {skillsLayout.map((item) => {
             return (
-              <div key={item?.tittle} className="bg-primary-950 h-max p-8 rounded-md">
+              <div
+                key={item?.tittle}
+                className="bg-primary-950 h-max p-8 rounded-md"
+              >
                 <div>
                   <img src={item?.img} alt="skillsicon1" />
                 </div>
@@ -215,7 +98,10 @@ export function SkillsSection() {
           <div className="grid grid-cols-6 gap-3 md:grid-cols-11">
             {techCloud.map((item) => {
               return (
-                <div key={item?.tittle} className="p-2 bg-primary-950 hover:opacity-65 flex items-center justify-center rounded-md">
+                <div
+                  key={item?.title}
+                  className="p-2 bg-primary-950 hover:opacity-65 flex items-center justify-center rounded-md"
+                >
                   <h1 className="font-label text-[9px] font-semibold text-[#D6E3FF]">
                     {item?.box}
                   </h1>

@@ -1,45 +1,9 @@
+import { ContactMe, contactMe } from "../data/data";
 import { LuDot } from "react-icons/lu";
 
-interface ContactMe {
-  label: string;
-  imgContact: string;
-  contact: string;
-  isiContact: string;
-  link: string;
-}
 
-const contactMe: ContactMe[] = [
-  {
-    label: "email",
-    imgContact: "/contact-email-icon.svg",
-    contact: "Email Inquiry",
-    isiContact: "jovin.najwan@gmail.com",
-    link: "mail.google.com",
-  },
-  {
-    label: "linkedin",
-    imgContact: "/contact-linkedin-icon.svg",
-    contact: "LinkedIn Profile",
-    isiContact: "linkedin.com/in/jovin-najwan-053870289",
-    link: "linkedin.com/in/jovin-najwan-053870289",
-  },
-  {
-    label: "github",
-    imgContact: "/contact-github-icon.svg",
-    contact: "GitHub Repositories",
-    isiContact: "github.com/muzuijovin",
-    link: "github.com/muzuijovin",
-  },
-  {
-    label: "location",
-    imgContact: "/contact-lokasi-icon.svg",
-    contact: "Primary Location",
-    isiContact: "Indonesia, Jawa Barat",
-    link: "https://www.google.com/maps",
-  },
-];
 
-export function ContactSection() {
+export function ContactSection({label, imgContact, contact, isiContact, link}: ContactMe) {
   return (
     <>
       <section id="contactSection" className="h-max bg-primary-975 p-12">

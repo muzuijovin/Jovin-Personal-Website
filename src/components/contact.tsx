@@ -13,7 +13,7 @@ export function ContactSection() {
           </h1>
         </div>
 
-        <div className="grid grid-cols-[60%_40%]">
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%]">
           <div className="p-2">
             <form action="" className="p-10 bg-primary-950 rounded-md w-full">
               <div className="flex gap-5">
@@ -72,7 +72,7 @@ export function ContactSection() {
                 <input
                   type="text"
                   id="projectSubject"
-                  className="input bg-primary-975 text-[#869397] font-label text-xs w-full h-20"
+                  className="input bg-primary-975 text-[#869397] font-label text-xs w-full h-20 overflow-scroll"
                   placeholder="Describe your architecture requirements, target deadlines, and technical specifications..."
                 />
               </fieldset>

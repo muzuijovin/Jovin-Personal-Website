@@ -17,7 +17,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* grid */}
-        <div className="grid grid-cols-1 h-max md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 h-max px-4 md:grid-cols-2 lg:grid-cols-3">
           <div className="p-8">
             <div className="bg-primary-975 h-70 rounded-md p-8">
               <img src="doubletick-icon-testi.svg" alt="quote" />

@@ -166,11 +166,11 @@ export const skillsLayout: SkillsLayout[] = [
 export const techCloud: TechCloud[] = [
   {
     title: "tech1",
-    box: "React 18",
+    box: "React",
   },
   {
     title: "tech2",
-    box: "Next.js 14",
+    box: "Next.js",
   },
   {
     title: "tech3",

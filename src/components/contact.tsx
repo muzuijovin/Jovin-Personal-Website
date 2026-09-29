@@ -36,7 +36,7 @@ export function ContactSection() {
                 <fieldset className="fieldset w-full">
                   <label
                     className="label font-label font-medium text-[12px] text-[#D6E3FF]"
-                    htmlFor="name"
+                    htmlFor="email"
                   >
                     Your Email Address
                   </label>

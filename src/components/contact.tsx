@@ -1,9 +1,20 @@
+"use client";
+
+import { useState } from "react";
 import { contactMe } from "../data/data";
 
 export function ContactSection() {
+  const [inputFullname, setInputFullname] = useState<string>("");
+  const [inputEmail, setInputEmail] = useState<string>("");
+  const [inputSubject, setInputSubject] = useState<string>("");
+  const [inputDescription, setInputDescription] = useState<string>("");
+
   return (
     <>
-      <section id="contactSection" className="h-max bg-primary-975 p-12 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]">
+      <section
+        id="contactSection"
+        className="h-max bg-primary-975 p-12 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]"
+      >
         <div className="mb-16">
           <h3 className="font-label text-[#4FDBC8] text-xs">
             06 / CONNECT ----
@@ -15,7 +26,12 @@ export function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[60%_40%]">
           <div className="p-2">
-            <form action="" className="p-10 bg-primary-950 rounded-md w-full">
+            <form
+              action="mailto:jovin.najwan@gmail.com"
+              method="post"
+              id="formContact"
+              className="p-10 bg-primary-950 rounded-md w-full"
+            >
               <div className="flex gap-5">
                 <fieldset className="fieldset w-full">
                   <label
@@ -27,6 +43,8 @@ export function ContactSection() {
                   <input
                     type="text"
                     id="name"
+                    value={inputFullname}
+                    onChange={(value) => setInputFullname(value.target.value)}
                     className="input bg-primary-975 text-[#869397] font-label text-xs w-full"
                     placeholder="Input your name"
                   />
@@ -41,6 +59,8 @@ export function ContactSection() {
                   <input
                     type="email"
                     id="email"
+                    value={inputEmail}
+                    onChange={(value) => setInputEmail(value.target.value)}
                     className="input bg-primary-975 text-[#869397] font-label text-xs w-full"
                     placeholder="Input your email"
                   />
@@ -57,6 +77,8 @@ export function ContactSection() {
                 <input
                   type="text"
                   id="projectSubject"
+                  value={inputSubject}
+                  onChange={(value) => setInputSubject(value.target.value)}
                   className="input bg-primary-975 text-[#869397] font-label text-xs w-full"
                   placeholder="Full-Stack Web Application / Architecture Consultation"
                 />
@@ -71,14 +93,18 @@ export function ContactSection() {
                 </label>
                 <input
                   type="text"
-                  id="projectSubject"
+                  id="projectDescriptiont"
+                  value={inputDescription}
+                  onChange={(value) => setInputDescription(value.target.value)}
                   className="input bg-primary-975 text-[#869397] font-label text-xs w-full h-20 overflow-scroll"
                   placeholder="Describe your architecture requirements, target deadlines, and technical specifications..."
                 />
               </fieldset>
 
               <div className="w-full flex justify-center mt-5">
-                <button className="btn btn-success w-xs">sent</button>
+                <button type="submit" className="btn btn-success w-xs">
+                  sent
+                </button>
               </div>
             </form>
           </div>

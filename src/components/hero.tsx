@@ -1,12 +1,13 @@
-import {  pointPlus } from "../data/data";
+import { pointPlus } from "../data/data";
 import { GoDotFill } from "react-icons/go";
 
 export function HeroSection() {
-  
-  
   return (
     <>
-      <section id="heroSection" className="bg-primary-975 h-max p-12  bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]">
+      <section
+        id="heroSection"
+        className="bg-primary-975 h-max p-12  bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]"
+      >
         <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] ">
           <div id="leftSideHero">
             <p className="font-label text-xs text-[#4FDBC8]">
@@ -24,24 +25,29 @@ export function HeroSection() {
             </h2>
 
             <div className="flex gap-4 mt-6">
-               <a href="#portofolioSection">
-              <button className="btn btn-info font-label">
-                VIEW PORTFOLIO{" "}
-                <span>
-                  <img src="/panah.svg" alt="row" />
-                </span>
-              </button>
-               </a>
+              <a href="#portofolioSection">
+                <button className="btn btn-info font-label">
+                  VIEW PORTFOLIO{" "}
+                  <span>
+                    <img src="/panah.svg" alt="row" />
+                  </span>
+                </button>
+              </a>
 
-              <button className="flex gap-2 w-max h-max p-2.25 rounded-md font-label bg-primary-900 hover:opacity-70 text-primary-100 cursor-pointer">
-                Contact Me <img src="/contact-me-icon.svg" alt="contactme" />
-              </button>
+              <a href="#formContact">
+                <button className="flex gap-2 w-max h-max p-2.25 rounded-md font-label bg-primary-900 hover:opacity-70 text-primary-100 cursor-pointer">
+                  Contact Me <img src="/contact-me-icon.svg" alt="contactme" />
+                </button>
+              </a>
             </div>
 
             <div className="px-3 grid grid-cols-1 gap-2 md:grid-cols-2 mt-10 rounded-xl lg:grid-cols-3 ">
               {pointPlus.map((item) => {
                 return (
-                  <div key={item?.label} className=" w-full h-18 rounded-lg bg-primary-950 flex items-center justify-center pl-3">
+                  <div
+                    key={item?.label}
+                    className=" w-full h-18 rounded-lg bg-primary-950 flex items-center justify-center pl-3"
+                  >
                     <div className="flex flex-col justify-center items-center">
                       <h1 className="font-headline text-xl font-semibold text-[#4CD7F6]">
                         {item?.hsatu}
@@ -56,7 +62,10 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div id="rightSideHero" className=" p-5 md:p-20 md:pl-30 md:pr-20 md:pt-0">
+          <div
+            id="rightSideHero"
+            className=" p-5 md:p-20 md:pl-30 md:pr-20 md:pt-0"
+          >
             <div
               id="fullLayOut"
               className="group rounded-2xl overflow-hidden border border-white/5 shadow-[0_0_50px_-12px_rgba(79,219,200,0.15)]"

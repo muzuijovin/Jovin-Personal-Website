@@ -1,8 +1,6 @@
 import { buttonNavbar } from "../data/data";
 
-
 export function Navbar() {
-
   return (
     <>
       <section className="navbar flex justify-between bg-[#041329] pr-5 pl-5 bg-[repeating-linear-gradient(45deg,#000_0,#000_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-opacity-5">
@@ -91,7 +89,9 @@ export function Navbar() {
             </span>
           </div>
 
-          <button className="btn btn-info font-label">Hire Me</button>
+          <a href="#formContact">
+            <button className="btn btn-info font-label ">Hire Me</button>
+          </a>
 
           <div className="w-9 h-9 cursor-pointer rounded-xl overflow-hidden">
             <img

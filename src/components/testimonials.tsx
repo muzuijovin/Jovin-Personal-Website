@@ -5,14 +5,13 @@ export function TestimonialsSection() {
         <div className="flex justify-center mb-16">
           <div className="flex flex-col items-center">
             <h3 className="font-label text-[#4FDBC8] text-xs">
-              04 / TRAJECTORY ----
+              05 / ENDORSEMENTS ----
             </h3>
             <h1 className="font-bold font-headline text-4xl text-neutral-100 mt-3">
-              Engineering Journey & Experience
+              What Mentors & Peers Say
             </h1>
             <p className="font-label text-[15px] text-[#BCC9CD] mt-2">
-              Testimonials on technical execution, work ethic, and
-              cross-functional communication.
+              Testimonials on technical execution, work ethic, and cross-functional communication.
             </p>
           </div>
         </div>

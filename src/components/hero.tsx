@@ -117,7 +117,7 @@ export function HeroSection() {
                     role:
                   </span>{" "}
                   <span className="text-[#93c5fd] font-tittle text-xs">
-                    'Full Stack'
+                    'Full Stack Web Developer'
                   </span>
                 </div>
 

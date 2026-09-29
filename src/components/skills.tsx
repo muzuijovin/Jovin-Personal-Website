@@ -1,11 +1,6 @@
-import { SkillsLayout, skillsLayout, TechCloud, techCloud } from "../data/data";
+import { skillsLayout, techCloud } from "../data/data";
 
-interface SkillsSectionProps {
-  skillsData: SkillsLayout;
-  techData: TechCloud; // Mengambil title dan box dari TechCloud
-}
-
-export function SkillsSection({ skillsData, techData }: SkillsSectionProps) {
+export function SkillsSection() {
   return (
     <>
       <section id="skillsSection" className="bg-primary-975 h-max p-12">

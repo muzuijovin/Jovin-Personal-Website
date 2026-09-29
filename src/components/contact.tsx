@@ -1,9 +1,8 @@
-import { ContactMe, contactMe } from "../data/data";
-import { LuDot } from "react-icons/lu";
+import { contactMe } from "../data/data";
 
 
 
-export function ContactSection({label, imgContact, contact, isiContact, link}: ContactMe) {
+export function ContactSection() {
   return (
     <>
       <section id="contactSection" className="h-max bg-primary-975 p-12">

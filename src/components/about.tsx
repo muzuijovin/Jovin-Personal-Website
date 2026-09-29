@@ -1,5 +1,5 @@
-import { AboutPoint, aboutPoint } from "../data/data";
-export function AboutSection({ tittle, isi }: AboutPoint) {
+import {  aboutPoint } from "../data/data";
+export function AboutSection() {
   return (
     <>
       <section id="aboutSection" className="h-max bg-[#041329] p-12">

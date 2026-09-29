@@ -1,7 +1,7 @@
-import { PointPlus, pointPlus } from "../data/data";
+import {  pointPlus } from "../data/data";
 import { GoDotFill } from "react-icons/go";
 
-export function HeroSection({label, hsatu, paragraph}: PointPlus) {
+export function HeroSection() {
   
   
   return (

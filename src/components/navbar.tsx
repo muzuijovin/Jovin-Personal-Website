@@ -1,7 +1,7 @@
-import { ButtonNavbar, buttonNavbar } from "../data/data";
+import { buttonNavbar } from "../data/data";
 
 
-export function Navbar({label, tittle, url}: ButtonNavbar) {
+export function Navbar() {
 
   return (
     <>

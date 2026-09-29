@@ -1,12 +1,8 @@
-import { UsingTools, usingTools, StarCase, starCase } from "../data/data";
+import {  usingTools, starCase } from "../data/data";
 import { GoDotFill } from "react-icons/go";
 
-interface SkillsSectionProps {
-  usingData: UsingTools;
-  starData: StarCase; // Mengambil title dan box dari TechCloud
-}
 
-export function PortofolioSection({usingData, starData}:SkillsSectionProps) {
+export function PortofolioSection() {
   return (
     <>
       <section

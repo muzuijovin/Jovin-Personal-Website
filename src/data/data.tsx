@@ -317,3 +317,39 @@ export const contactMe: ContactMe[] = [
     link: "https://www.google.com/maps",
   },
 ];
+
+/*testimonials */
+export interface Testimonials {
+    id: number;
+    quote: string;
+    initials: string;
+    role: string;
+    company: string;
+  }
+
+export const testimonials: Testimonials[] = [
+    {
+      id: 1,
+      quote:
+        "Jovin demonstrates exceptional clarity in breaking down complex backend logic and delivering pristine frontend interfaces. His focus on performance and timeliness makes him an invaluable engineering teammate.",
+      initials: "SM",
+      role: "Senior Engineering Mentor",
+      company: "Purwadhika Digital Technology School",
+    },
+    {
+      id: 2,
+      quote:
+        "Working alongside Jovin on fullstack sprints was seamless. His code is impeccably organized, well-documented, and his dedication to team communication kept our delivery ahead of schedule.",
+      initials: "PL",
+      role: "Peer Developer & Project Lead",
+      company: "Agile Team Sprints",
+    },
+    {
+      id: 3,
+      quote:
+        "The e-commerce platform delivered by Jovin exceeded our benchmark for mobile responsiveness and real-time inventory tracking. Outstanding technical execution!",
+      initials: "PS",
+      role: "Product Stakeholder",
+      company: "XYZ Retail Expansion",
+    },
+  ];

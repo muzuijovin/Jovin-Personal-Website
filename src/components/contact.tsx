@@ -1,13 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { contactMe } from "../data/data";
+import axios, { isAxiosError } from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 export function ContactSection() {
-  const [inputFullname, setInputFullname] = useState<string>("");
-  const [inputEmail, setInputEmail] = useState<string>("");
-  const [inputSubject, setInputSubject] = useState<string>("");
-  const [inputDescription, setInputDescription] = useState<string>("");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = useForm<any>();
+
+  const handleSentMessage = async (data: any) => {
+    try {
+      await axios.post(
+        "https://api.backendless.com/1B12E6FF-A338-4279-BC91-1F5A39A25BFA/4C7BD5CF-F180-4CA1-A3D3-0D09CFD4EB00/data/personalwebsite",
+        data,
+      );
+      reset();
+      toast.success("post berhasil");
+    } catch (error: any) {
+      if (isAxiosError(error)) {
+        toast.error(error?.response?.data?.message);
+      }
+    }
+  };
 
   return (
     <>
@@ -27,8 +46,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[60%_40%]">
           <div className="p-2">
             <form
-              action="mailto:jovin.najwan@gmail.com"
-              method="post"
+              onSubmit={handleSubmit(handleSentMessage)}
               id="formContact"
               className="p-10 bg-primary-950 rounded-md w-full"
             >
@@ -43,10 +61,9 @@ export function ContactSection() {
                   <input
                     type="text"
                     id="name"
-                    value={inputFullname}
-                    onChange={(value) => setInputFullname(value.target.value)}
                     className="input bg-primary-975 text-[#869397] font-label text-xs w-full"
                     placeholder="Input your name"
+                    {...register("name")}
                   />
                 </fieldset>
                 <fieldset className="fieldset w-full">
@@ -59,10 +76,9 @@ export function ContactSection() {
                   <input
                     type="email"
                     id="email"
-                    value={inputEmail}
-                    onChange={(value) => setInputEmail(value.target.value)}
                     className="input bg-primary-975 text-[#869397] font-label text-xs w-full"
                     placeholder="Input your email"
+                    {...register("email")}
                   />
                 </fieldset>
               </div>
@@ -77,10 +93,9 @@ export function ContactSection() {
                 <input
                   type="text"
                   id="projectSubject"
-                  value={inputSubject}
-                  onChange={(value) => setInputSubject(value.target.value)}
                   className="input bg-primary-975 text-[#869397] font-label text-xs w-full"
                   placeholder="Full-Stack Web Application / Architecture Consultation"
+                  {...register("projectSubject")}
                 />
               </fieldset>
 
@@ -93,17 +108,16 @@ export function ContactSection() {
                 </label>
                 <input
                   type="text"
-                  id="projectDescriptiont"
-                  value={inputDescription}
-                  onChange={(value) => setInputDescription(value.target.value)}
+                  id="projectDescription"
                   className="input bg-primary-975 text-[#869397] font-label text-xs w-full h-20 overflow-scroll"
                   placeholder="Describe your architecture requirements, target deadlines, and technical specifications..."
+                  {...register("projectDescription")}
                 />
               </fieldset>
 
               <div className="w-full flex justify-center mt-5">
-                <button type="submit" className="btn btn-success w-xs">
-                  sent
+                <button disabled={isSubmitting} className="btn btn-success w-xs font-label font-medium text-[#00424F] text-xs">
+                  Sent Message
                 </button>
               </div>
             </form>
@@ -143,6 +157,8 @@ export function ContactSection() {
           </div>
         </div>
       </section>
+
+      <ToastContainer/>
     </>
   );
 }

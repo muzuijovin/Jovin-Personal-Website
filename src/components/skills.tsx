@@ -78,14 +78,14 @@ export function SkillsSection() {
           <h1 className="font-label font-semibold text-xs text-[#4FDBC8] mb-3">
             LUMINOUS TECH CLOUD
           </h1>
-          <div className="grid grid-cols-4 md:grid-cols-11 gap-3 h-max">
+          <div className="grid grid-cols-3 md:grid-cols-11 gap-3 h-max">
             {techCloud.map((item) => {
               return (
                 <div
                   key={item?.title}
                   className="p-2 bg-primary-950 hover:opacity-65 flex items-center justify-center rounded-md cursor-pointer"
                 >
-                  <h1 className="font-label text-[9px] font-semibold text-[#D6E3FF]">
+                  <h1 className="font-label text-[7px] md:text-[9px] font-semibold text-[#D6E3FF]">
                     {item?.box}
                   </h1>
                 </div>

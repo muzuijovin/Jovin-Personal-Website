@@ -97,11 +97,8 @@ export interface SkillsLayout {
   hsatu: string;
   paragraph: string;
   spansatu: string;
-  persensatu: string;
   spandua: string;
-  persendua: string;
   spantiga: string;
-  persentiga: string;
   kolompertama: string;
   kolomdua: string;
   kolomtiga: string;
@@ -120,11 +117,8 @@ export const skillsLayout: SkillsLayout[] = [
     paragraph:
       "Responsive, accessible user interfaces engineered with modern reactive frameworks and precise typography.",
     spansatu: "React / Next.js",
-    persensatu: "95",
     spandua: "TypeScript / ES6+",
-    persendua: "90",
     spantiga: "Tailwind CSS / HTML5",
-    persentiga: "95",
     kolompertama: "CSS3",
     kolomdua: "DOM API",
     kolomtiga: "Micro-interactions",
@@ -136,11 +130,8 @@ export const skillsLayout: SkillsLayout[] = [
     paragraph:
       "Fault-tolerant microservices, normalized relational schemas, and hardened REST endpoints.",
     spansatu: "Node.js / Express.js",
-    persensatu: "92",
     spandua: "PostgreSQL & Relational DBs",
-    persendua: "88",
     spantiga: "RESTful APIs & Auth",
-    persentiga: "94",
     kolompertama: "Django Awareness",
     kolomdua: "Ruby on Rails",
     kolomtiga: "Schema Design",
@@ -152,11 +143,8 @@ export const skillsLayout: SkillsLayout[] = [
     paragraph:
       "Automated deployment pipelines, cloud provisioning, version control, and rigorous API validation.",
     spansatu: "Docker & Containers",
-    persensatu: "82",
     spandua: "Git & GitHub Workflows",
-    persendua: "95",
     spantiga: "AWS & CI/CD Pipelines",
-    persentiga: "80",
     kolompertama: "Postman",
     kolomdua: "Jenkins",
     kolomtiga: "Vercel Edge",

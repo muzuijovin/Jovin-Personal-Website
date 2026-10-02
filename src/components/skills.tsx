@@ -3,7 +3,10 @@ import { skillsLayout, techCloud } from "../data/data";
 export function SkillsSection() {
   return (
     <>
-      <section id="skillsSection" className="bg-primary-975 h-max p-12 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]">
+      <section
+        id="skillsSection"
+        className="bg-primary-975 h-max p-12 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]"
+      >
         <div className="flex justify-between items-center">
           <div>
             <h3 className="font-label text-[#4FDBC8] text-xs">
@@ -39,36 +42,21 @@ export function SkillsSection() {
                   {item?.paragraph}
                 </p>
 
-                <div className="space-y-1 mt-10">
+                <div className="space-y-5 mt-10">
                   <div className="flex justify-between text-label text-xs font-semibold text-neutral-100">
                     <span>{item?.spansatu}</span>
-                    <span className="text-[#4FDBC8]">{item?.persensatu}%</span>
+                    <img src="/skills-centang.svg" alt="skills centang" />
                   </div>
-                  <progress
-                    className="progress progress-info w-full h-1.5"
-                    value={item?.persensatu}
-                    max="100"
-                  ></progress>
 
                   <div className="flex justify-between text-label text-xs font-semibold text-neutral-100">
                     <span>{item?.spandua}</span>
-                    <span className="text-[#4FDBC8]">{item?.persendua}%</span>
+                    <img src="/skills-centang.svg" alt="skills centang" />
                   </div>
-                  <progress
-                    className="progress progress-info w-full h-1.5"
-                    value={item?.persendua}
-                    max="100"
-                  ></progress>
 
                   <div className="flex justify-between text-label text-xs font-semibold text-neutral-100">
                     <span>{item?.spantiga}</span>
-                    <span className="text-[#4FDBC8]">{item?.persentiga}%</span>
+                    <img src="/skills-centang.svg" alt="skills centang" />
                   </div>
-                  <progress
-                    className="progress progress-info w-full h-1.5"
-                    value={item?.persentiga}
-                    max="100"
-                  ></progress>
                   <div className="mt-5 flex gap-3">
                     <h4 className="text-[#BCC9CD] text-[9px] font-semibold font-label bg-primary-900 p-1 rounded-sm cursor-pointer">
                       {item?.kolompertama}

@@ -42,13 +42,13 @@ export function Navbar() {
                 <a href="#portofolioSection">portofolio</a>
               </li>
               <li>
-                <a>experience</a>
+                <a href="#experienceSection">experience</a>
               </li>
               <li>
-                <a>testimonials</a>
+                <a href="#testimonialsSection">testimonials</a>
               </li>
               <li>
-                <a>contact</a>
+                <a href="contactSection">contact</a>
               </li>
             </ul>
           </div>

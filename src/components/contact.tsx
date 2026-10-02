@@ -48,7 +48,7 @@ export function ContactSection() {
               id="formContact"
               className="p-10 bg-primary-950 rounded-md w-full"
             >
-              <div className="flex gap-5">
+              <div className="flex flex-col md:flex-row gap-5">
                 <fieldset className="fieldset w-full">
                   <label
                     className="label font-label font-medium text-[12px] text-[#D6E3FF]"
@@ -113,8 +113,8 @@ export function ContactSection() {
                 />
               </fieldset>
 
-              <div className="w-full flex justify-center mt-5">
-                <button disabled={isSubmitting} className="btn btn-success w-xs font-label font-medium text-[#00424F] text-xs">
+              <div className="w-full flex justify-start md:justify-center mt-5">
+                <button disabled={isSubmitting} className="btn btn-success font-label font-medium text-[#00424F] text-xs">
                   Sent Message
                 </button>
               </div>

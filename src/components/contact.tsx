@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { contactMe } from "../data/data";
-import axios, { isAxiosError } from "axios";
+import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 
 export function ContactSection() {
@@ -22,9 +22,7 @@ export function ContactSection() {
       reset();
       toast.success("post berhasil");
     } catch (error: any) {
-      if (isAxiosError(error)) {
-        toast.error(error?.response?.data?.message);
-      }
+      toast.error(error)
     }
   };
 

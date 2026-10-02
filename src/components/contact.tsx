@@ -114,7 +114,7 @@ export function ContactSection() {
               </fieldset>
 
               <div className="w-full flex justify-start md:justify-center mt-5">
-                <button disabled={isSubmitting} className="btn btn-success font-label font-medium text-[#00424F] text-xs">
+                <button disabled={isSubmitting} className="btn btn-success w-full lg:w-xs font-label font-medium text-[#00424F] text-xs">
                   Sent Message
                 </button>
               </div>

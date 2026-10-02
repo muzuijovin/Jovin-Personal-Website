@@ -13,7 +13,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] mt-8">
           <div id="leftSideHero">
             <p className="font-label text-xs text-[#4FDBC8]">
-              "OPEN TO FULL-STACK OPPORTUNITIES | PURWADHIKA GRADUATE",
+              "👋 OPEN TO FULL-STACK OPPORTUNITIES | PURWADHIKA GRADUATE",
             </p>
             <h1 className="font-headline font-extrabold text-5xl text-primary-100 mt-6">
               Engineering robust <span className="text-[#4FDBC8]">web</span>{" "}

@@ -79,7 +79,7 @@ export function PortofolioSection() {
             </h1>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 lg:grid-cols-4">
             {starCase.map((item) => {
               return (
                 <div key={item?.tittle} className="p-6">

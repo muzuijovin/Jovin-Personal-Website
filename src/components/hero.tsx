@@ -1,3 +1,5 @@
+"use client";
+
 import { pointPlus } from "../data/data";
 import { GoDotFill } from "react-icons/go";
 
@@ -11,18 +13,13 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] mt-8">
           <div id="leftSideHero">
             <p className="font-label text-xs text-[#4FDBC8]">
-              👋 OPEN TO FULL-STACK OPPORTUNITIES | PURWADHIKA GRADUATE
+              "OPEN TO FULL-STACK OPPORTUNITIES | PURWADHIKA GRADUATE",
             </p>
             <h1 className="font-headline font-extrabold text-5xl text-primary-100 mt-6">
               Engineering robust <span className="text-[#4FDBC8]">web</span>{" "}
               <span className="text-[#4FDBC8]">architectures</span> that empower
               businesses to scale.
             </h1>
-            <h2 className="font-label text-sm text-primary-50 mt-6">
-              Hi, I'm Jovin Najwan — a Full-Stack Web Developer passionate about
-              building high-performance, fault-tolerant web applications and
-              seamless end-to-end digital solutions.
-            </h2>
 
             <div className="flex gap-4 mt-6">
               <a href="#portofolioSection">

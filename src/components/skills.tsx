@@ -23,7 +23,7 @@ export function SkillsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 p-6 gap-10 md:grid-cols-3 mt-12">
+        <div className="grid grid-cols-1  gap-10 md:grid-cols-3 mt-12 md:p-6">
           {skillsLayout.map((item) => {
             return (
               <div
@@ -78,7 +78,7 @@ export function SkillsSection() {
           <h1 className="font-label font-semibold text-xs text-[#4FDBC8] mb-3">
             LUMINOUS TECH CLOUD
           </h1>
-          <div className="grid grid-cols-6 gap-3 md:grid-cols-11">
+          <div className="grid grid-cols-5 md:grid-cols-11 gap-3 h-max">
             {techCloud.map((item) => {
               return (
                 <div

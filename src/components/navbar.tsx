@@ -3,7 +3,7 @@ import { buttonNavbar } from "../data/data";
 export function Navbar() {
   return (
     <>
-      <section className="navbar flex justify-between bg-[#041329] pr-5 pl-5 bg-[repeating-linear-gradient(45deg,#000_0,#000_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-opacity-5">
+      <section className="navbar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-[#041329] px-6 py-4 bg-[repeating-linear-gradient(45deg,#000_0,#000_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-opacity-5">
         <div className=" flex items-center gap-5 ">
           <div className="dropdown">
             <div

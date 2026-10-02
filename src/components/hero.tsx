@@ -6,9 +6,9 @@ export function HeroSection() {
     <>
       <section
         id="heroSection"
-        className="bg-primary-975 h-max p-12  bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]"
+        className="mt-16 bg-primary-975 h-max p-12  bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] ">
+        <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] mt-8">
           <div id="leftSideHero">
             <p className="font-label text-xs text-[#4FDBC8]">
               👋 OPEN TO FULL-STACK OPPORTUNITIES | PURWADHIKA GRADUATE
@@ -72,7 +72,7 @@ export function HeroSection() {
             >
               <div
                 id="layoutPhoto"
-                className="h-120 md:h-90 md:bg-blend-saturation md:relative overflow-hidden"
+                className="h-120 md:h-110 md:bg-blend-saturation md:relative overflow-hidden"
               >
                 <div className="flex gap-1 h-max w-max absolute top-2 right-2 bg-[#010E24] rounded-xl p-1 cursor-pointer">
                   <GoDotFill className="text-[#ACEDFF]" />

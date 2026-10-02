@@ -84,9 +84,9 @@ export function Navbar() {
 
         <div className="flex items-center gap-4 pl-2 pr-2">
           <div className="bg-primary-900 hover:opacity-65 rounded-lg w-7 h-7 flex justify-center items-center cursor-pointer">
-            <span>
-              <img src="/Share-Icon.svg" alt="share" />
-            </span>
+            <a href="https://github.com/muzuijovin/Jovin-Personal-Website.git">
+              <img src="/navbar-logo-github.svg" alt="share" />
+            </a>
           </div>
 
           <a href="#formContact">

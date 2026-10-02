@@ -48,7 +48,7 @@ export function Navbar() {
                 <a href="#testimonialsSection">testimonials</a>
               </li>
               <li>
-                <a href="contactSection">contact</a>
+                <a href="#contactSection">contact</a>
               </li>
             </ul>
           </div>

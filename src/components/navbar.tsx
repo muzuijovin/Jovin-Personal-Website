@@ -83,15 +83,19 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-4 pl-2 pr-2">
-          <div className="bg-primary-900 hover:opacity-65 rounded-lg w-7 h-7 flex justify-center items-center cursor-pointer">
+          <div className="hidden lg:bg-primary-900 lg:hover:opacity-65 lg:rounded-lg lg:w-7 lg:h-7 lg:flex lg:justify-center lg:items-center lg:cursor-pointer">
             <a href="https://github.com/muzuijovin/Jovin-Personal-Website.git">
               <img src="/navbar-logo-github.svg" alt="share" />
             </a>
           </div>
 
-          <a href="#formContact">
-            <button className="btn btn-info font-label ">Hire Me</button>
-          </a>
+          <div className="hidden lg:block">
+            <a href="#formContact">
+              <button className="lg:btn lg:btn-info lg:font-label ">
+                Hire Me
+              </button>
+            </a>
+          </div>
 
           <div className="w-9 h-9 cursor-pointer rounded-xl overflow-hidden">
             <img

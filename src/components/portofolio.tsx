@@ -42,7 +42,7 @@ export function PortofolioSection() {
               {/* Sisi Kiri: Informasi Proyek */}
               <div className="flex-1 max-w-152.5 flex flex-col items-start text-left">
                 {/* Badge Status & Nomor Proyek */}
-                <div className="flex items-center gap-3 mb-4 font-mono text-[11px] font-bold">
+                <div className="flex items-center gap-3 mb-4 font-tittle text-[11px] font-bold">
                   <span className="text-[#4CD7F6] tracking-wider">
                     {project.projectNumber}
                   </span>
@@ -53,12 +53,12 @@ export function PortofolioSection() {
                 </div>
 
                 {/* Judul Proyek */}
-                <h3 className="font-['Manrope'] text-2xl lg:text-[28px] leading-9 font-semibold text-[#D6E3FF] mb-4 tracking-[-0.7px]">
+                <h3 className="font-headline text-2xl lg:text-[28px] leading-9 font-semibold text-[#D6E3FF] mb-4 tracking-[-0.7px]">
                   {project.title}
                 </h3>
 
                 {/* Deskripsi Proyek */}
-                <p className="font-['Geist'] text-[15px] leading-[24.4px] text-[#BCC9CD] font-regular mb-6">
+                <p className="font-label text-[15px] leading-[24.4px] text-[#BCC9CD] font-regular mb-6">
                   {project.description}
                 </p>
 
@@ -67,7 +67,7 @@ export function PortofolioSection() {
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="font-['Geist'] text-[11px] font-semibold px-2.5 py-1 rounded bg-primary-950 text-[#BCC9CD] border border-[#1C2A41]/30"
+                      className="font-label text-[11px] font-semibold px-2.5 py-1 rounded bg-primary-950 text-[#BCC9CD] border border-[#1C2A41]/30"
                     >
                       {tag}
                     </span>
@@ -79,7 +79,7 @@ export function PortofolioSection() {
                   <Link
                     href={project.liveDemoUrl}
                     target="_blank"
-                    className="inline-flex items-center justify-center font-['Geist'] text-xs font-semibold px-4 py-2.5 rounded bg-[#4CD7F6] text-[#00424F] hover:bg-[#45c3de] transition-colors"
+                    className="inline-flex items-center justify-center font-label text-xs font-semibold px-4 py-2.5 rounded bg-[#4CD7F6] text-[#00424F] hover:bg-[#45c3de] transition-colors"
                   >
                     {/* Icon Live Demo */}
                     <svg
@@ -103,7 +103,7 @@ export function PortofolioSection() {
                   <Link
                     href={project.repositoryUrl}
                      target="_blank"
-                    className="inline-flex items-center justify-center font-['Geist'] text-xs font-semibold px-4 py-2.5 rounded border border-[#1C2A41] text-[#BCC9CD] hover:bg-primary-950 transition-colors"
+                    className="inline-flex items-center justify-center font-label text-xs font-semibold px-4 py-2.5 rounded border border-[#1C2A41] text-[#BCC9CD] hover:bg-primary-950 transition-colors"
                   >
                     {/* Icon Repository */}
                     <svg
@@ -135,7 +135,7 @@ export function PortofolioSection() {
                     <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e]/70"></span>
                   </div>
                   {/* URL Bar */}
-                  <div className="font-mono text-[11px] text-[#BCC9CD]/60 px-6 py-0.5 bg-[#060b13] rounded-md border border-[#1C2A41]/20 max-w-60 truncate">
+                  <div className="font-tittle text-[11px] text-[#BCC9CD]/60 px-6 py-0.5 bg-[#060b13] rounded-md border border-[#1C2A41]/20 max-w-60 truncate">
                     {project.siteUrlText}
                   </div>
                   {/* Placeholder Spacing */}
@@ -167,7 +167,7 @@ export function PortofolioSection() {
                           d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                         />
                       </svg>
-                      <p className="mt-2 text-xs text-[#BCC9CD]/40 font-['Geist']">
+                      <p className="mt-2 text-xs text-[#BCC9CD]/40 font-label">
                         Tempatkan gambar Anda di sini nanti
                       </p>
                     </div>

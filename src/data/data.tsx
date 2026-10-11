@@ -248,7 +248,7 @@ export const portfolioData:  PortfolioData[]= [
       "Tailwind CSS",
       "Vercel",
       "Responsive Web Design",
-      "REST API",
+      "Backendless",
     ],
     liveDemoUrl: "https://kopi-nusa-company-profile.vercel.app/",
     repositoryUrl: "https://github.com/muzuijovin/Kopi-Nusa_Company-Profile.git",

@@ -1,5 +1,5 @@
 import { buttonNavbar } from "../data/data";
-
+import Link from "next/link";
 export function Navbar() {
   return (
     <>
@@ -33,22 +33,22 @@ export function Navbar() {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a href="#aboutSection">about</a>
+                <Link href="#aboutSection">about</Link>
               </li>
               <li>
-                <a href="#skillsSection">skills</a>
+                <Link href="#skillsSection">skills</Link>
               </li>
               <li>
-                <a href="#portofolioSection">portofolio</a>
+                <Link href="#portofolioSection">portofolio</Link>
               </li>
               <li>
-                <a href="#experienceSection">experience</a>
+                <Link href="#experienceSection">experience</Link>
               </li>
               <li>
-                <a href="#testimonialsSection">testimonials</a>
+                <Link href="#testimonialsSection">testimonials</Link>
               </li>
               <li>
-                <a href="#contactSection">contact</a>
+                <Link href="#contactSection">contact</Link>
               </li>
             </ul>
           </div>
@@ -73,28 +73,28 @@ export function Navbar() {
         <div className="hidden md:flex md:gap-2">
           {buttonNavbar.map((menu) => {
             return (
-              <a key={menu?.label} href={menu?.url}>
+              <Link key={menu?.label} href={menu?.url}>
                 <button className="btn btn-info rounded-md font-label">
                   {menu?.label}
                 </button>
-              </a>
+              </Link>
             );
           })}
         </div>
 
         <div className="flex items-center gap-4 pl-2 pr-2">
           <div className="hidden lg:bg-primary-900 lg:hover:opacity-65 lg:rounded-lg lg:w-7 lg:h-7 lg:flex lg:justify-center lg:items-center lg:cursor-pointer">
-            <a href="https://github.com/muzuijovin/Jovin-Personal-Website.git">
+            <Link href="https://github.com/muzuijovin/Jovin-Personal-Website.git">
               <img src="/navbar-logo-github.svg" alt="share" />
-            </a>
+            </Link>
           </div>
 
           <div className="hidden lg:block">
-            <a href="#formContact">
+            <Link href="#formContact">
               <button className="lg:btn lg:btn-info lg:font-label ">
                 Hire Me
               </button>
-            </a>
+            </Link>
           </div>
 
           <div className="w-9 h-9 cursor-pointer rounded-xl overflow-hidden">

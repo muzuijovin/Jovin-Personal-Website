@@ -220,49 +220,53 @@ export interface StarCase {
   titlestar: string;
 }
 
-export const usingTools: UsingTools[] = [
-  {
-    tittle: "bahasa program",
-    bahasaProgram: "React",
-  },
-  {
-    tittle: "bahasa program",
-    bahasaProgram: "Tailwind",
-  },
-];
+/*untuk protofolio */
+interface PortfolioData {
+  id: number;
+    projectNumber: string;
+    status: string;
+    title: string;
+    description: string;
+    tags: string[];
+    liveDemoUrl: string;
+    repositoryUrl: string;
+    imgSrc: string;
+    siteUrlText: string;
+}
 
-export const starCase: StarCase[] = [
+export const portfolioData:  PortfolioData[]= [
   {
-    tittle: "SITUATION",
-    logo: "S",
-    paragraph:
-      "XYZ Retail, an established retail company, sought to expand into e- commerce to reach a wider audience and streamline its sales processes. They needed a scalable, user-friendly platform to support both desktop and mobile users with features like product browsing, user reviews, secure checkout, and real-time inventory updates.",
-    starcase: "logo-starcase-satu.svg",
-    titlestar: "Retail Digital Expansion",
+    id: 1,
+    projectNumber: "PROJECT 01 / 02",
+    status: "Live Production",
+    title: "Kopi Nusa – Artisanal Coffee Roastery Company Profile",
+    description:
+      "Modern web platform and company profile for an Indonesian artisanal coffee roastery, featuring curated specialty beans showcase, coffee cupping schedules, partner inquiry system, and responsive bilingual storytelling.",
+    tags: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Vercel",
+      "Responsive Web Design",
+      "REST API",
+    ],
+    liveDemoUrl: "https://kopi-nusa-company-profile.vercel.app/",
+    repositoryUrl: "https://github.com/muzuijovin/Kopi-Nusa_Company-Profile.git",
+    imgSrc: "/toko-kopi-nusa.PNG", // Kosongkan dulu, isi dengan path gambar nanti (ex: "/images/kopi-nusa.png")
+    siteUrlText: "kopi-nusa-company-profile.vercel.app",
   },
   {
-    tittle: "TASK",
-    logo: "T",
-    paragraph:
-      "I was responsible for building the front-end and back-end components of the platform, ensuring seamless integration with the client’s inventory and payment systems. The project goal was to create an efficient, high- performing application with a smooth user experience.",
-    starcase: "logo-starcase-dua.svg",
-    titlestar: "Full-Stack Ownership",
-  },
-  {
-    tittle: "ACTION",
-    logo: "A",
-    paragraph:
-      "Using React for the front-end, I designed a responsive, intuitive UI focused on user engagement and easy navigation. On the back end, I developed RESTful APIs with Node.js and MongoDB for data management. Additionally, I integrated the platform with AWS to optimize loading times and set up a CI/CD pipeline for faster deployment and testing. I worked closely with designers and QA to address usability and accessibility standards.",
-    starcase: "logo-starcase-tiga.svg",
-    titlestar: "React, AWS & CI/CD Pipeline",
-  },
-  {
-    tittle: "RESULT",
-    logo: "R",
-    paragraph:
-      "The project was completed on time, leading to a 35% increase in online sales within the first three months. User feedback highlighted the site's speed and ease of use, and the client reported a substantial reduction in manual inventory management tasks.",
-    starcase: "logo-starcase-empat.svg",
-    titlestar: "Delivered On Schedule",
+    id: 2,
+    projectNumber: "PROJECT 02 / 02",
+    status: "Enterprise Case Study",
+    title: "XYZ Retail – Scalable Multi-Tier E-Commerce Platform",
+    description:
+      "Full-featured retail storefront and catalog management platform delivering sub-1.2s load speeds, real-time stock sync, and seamless checkout integrations, resulting in a +35% surge in digital sales volume.",
+    tags: ["React", "Node.js", "MongoDB", "AWS Cloud", "CI/CD Pipeline"],
+    liveDemoUrl: "#",
+    repositoryUrl: "#", // Menggunakan "Request Architecture Deck" pada desain kedua
+    imgSrc: "", // Kosongkan dulu
+    siteUrlText: "xyz-retail.production.internal",
   },
 ];
 
@@ -308,36 +312,36 @@ export const contactMe: ContactMe[] = [
 
 /*testimonials */
 export interface Testimonials {
-    id: number;
-    quote: string;
-    initials: string;
-    role: string;
-    company: string;
-  }
+  id: number;
+  quote: string;
+  initials: string;
+  role: string;
+  company: string;
+}
 
 export const testimonials: Testimonials[] = [
-    {
-      id: 1,
-      quote:
-        "Jovin demonstrates exceptional clarity in breaking down complex backend logic and delivering pristine frontend interfaces. His focus on performance and timeliness makes him an invaluable engineering teammate.",
-      initials: "SM",
-      role: "Senior Engineering Mentor",
-      company: "Purwadhika Digital Technology School",
-    },
-    {
-      id: 2,
-      quote:
-        "Working alongside Jovin on fullstack sprints was seamless. His code is impeccably organized, well-documented, and his dedication to team communication kept our delivery ahead of schedule.",
-      initials: "PL",
-      role: "Peer Developer & Project Lead",
-      company: "Agile Team Sprints",
-    },
-    {
-      id: 3,
-      quote:
-        "The e-commerce platform delivered by Jovin exceeded our benchmark for mobile responsiveness and real-time inventory tracking. Outstanding technical execution!",
-      initials: "PS",
-      role: "Product Stakeholder",
-      company: "XYZ Retail Expansion",
-    },
-  ];
+  {
+    id: 1,
+    quote:
+      "Jovin demonstrates exceptional clarity in breaking down complex backend logic and delivering pristine frontend interfaces. His focus on performance and timeliness makes him an invaluable engineering teammate.",
+    initials: "SM",
+    role: "Senior Engineering Mentor",
+    company: "Purwadhika Digital Technology School",
+  },
+  {
+    id: 2,
+    quote:
+      "Working alongside Jovin on fullstack sprints was seamless. His code is impeccably organized, well-documented, and his dedication to team communication kept our delivery ahead of schedule.",
+    initials: "PL",
+    role: "Peer Developer & Project Lead",
+    company: "Agile Team Sprints",
+  },
+  {
+    id: 3,
+    quote:
+      "The e-commerce platform delivered by Jovin exceeded our benchmark for mobile responsiveness and real-time inventory tracking. Outstanding technical execution!",
+    initials: "PS",
+    role: "Product Stakeholder",
+    company: "XYZ Retail Expansion",
+  },
+];

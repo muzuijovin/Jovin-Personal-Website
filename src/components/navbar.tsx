@@ -62,12 +62,17 @@ export function Navbar() {
           </div>
 
           <div className="">
-            <h1 className="font-headline text-xl text-neutral-100">
-              Jovin Najwan
-            </h1>
-            <h2 className="font-label text-[#4FDBC8] font-semibold text-[11px]">
-              FULL-STACK <br /> DEVELOPER
-            </h2>
+            <Link href="/">
+              <h1 className="font-headline text-lg md:text-xl text-neutral-100">
+                Jovin Najwan
+              </h1>
+            </Link>
+
+            <Link href="/">
+              <h2 className="font-label text-[#4FDBC8] font-semibold text-[9px] md:text-[11px]">
+                FULL-STACK <br /> DEVELOPER
+              </h2>
+            </Link>
           </div>
         </div>
         <div className="hidden md:flex md:gap-2">

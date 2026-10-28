@@ -6,18 +6,23 @@ import { PortofolioSection } from "../components/portofolio";
 import { ExperienceSection } from "../components/experience";
 import { TestimonialsSection } from "../components/testimonials";
 import { ContactSection } from "../components/contact";
+import { Footer } from "../components/footer";
+import { MotionProvider } from "../components/motion";
 
 export default function Home() {
   return (
-    <>
+    <MotionProvider>
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <PortofolioSection />
-      <ExperienceSection />
-      <TestimonialsSection />
-      <ContactSection />
-    </>
+      <main id="main">
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <PortofolioSection />
+        <ExperienceSection />
+        <TestimonialsSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </MotionProvider>
   );
 }

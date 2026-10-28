@@ -1,6 +1,4 @@
-@import url("https://googleapis.com");
 @import "tailwindcss";
-@plugin "daisyui";
 
 @theme {
   /* ==========================================================================
@@ -64,9 +62,88 @@
   --color-neutral-950: #0a192f; /*main*/
 
   /* ==========================================================================
-     TYPOGRAPHY
+     SEMANTIC TOKENS (same colors as before, named by role)
      ========================================================================== */
-  --font-headline: "Manrope", sans-serif;
-  --font-label: "Geist", sans-serif;
-  --font-tittle: "Space Mono", monospace;
+  --color-canvas: #041329; /* page background */
+  --color-canvas-deep: #010e24; /* deepest layer: code windows, badges */
+  --color-surface: var(--color-primary-975); /* alternate section background */
+  --color-card: var(--color-primary-950); /* cards */
+  --color-line: #1c2a41; /* borders, dividers */
+  --color-accent: #4fdbc8; /* teal accent: eyebrows, highlights */
+  --color-accent-alt: #4cd7f6; /* cyan accent: primary CTA, numbers */
+  --color-on-accent: #00424f; /* text on cyan/teal buttons */
+  --color-ink: #d6e3ff; /* headings / strong text */
+  --color-ink-muted: #bcc9cd; /* body text */
+
+  /* ==========================================================================
+     TYPOGRAPHY (loaded via next/font in layout.tsx)
+     ========================================================================== */
+  --font-headline: var(--font-manrope), "Manrope", sans-serif;
+  --font-label: var(--font-geist), "Geist", sans-serif;
+  --font-tittle: var(--font-space-mono), "Space Mono", monospace;
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 5rem; /* keep anchored sections clear of the fixed navbar */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink-muted);
+    font-family: var(--font-label);
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-alt);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Subtle blueprint grid used behind every section */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, #8080800a 1px, transparent 1px),
+    linear-gradient(to bottom, #8080800a 1px, transparent 1px);
+  background-size: 14px 24px;
+}
+
+/* Section container: one max-width and spacing rhythm for the whole page */
+@utility section-shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+  padding-block: 5rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+    padding-block: 6.5rem;
+  }
+}
+
+/* Card surface shared by all sections */
+@utility card {
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
+  background-color: var(--color-card);
 }

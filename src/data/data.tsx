@@ -1,3 +1,26 @@
+import type { IconType } from "react-icons";
+import {
+  SiCss,
+  SiExpress,
+  SiFramer,
+  SiGit,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPrisma,
+  SiReact,
+  SiReacthookform,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+  SiZod,
+} from "react-icons/si";
+import { TbApi } from "react-icons/tb";
+import { VscVscode } from "react-icons/vsc";
+
 /* Navbar */
 
 export interface ButtonNavbar {
@@ -74,26 +97,52 @@ export interface AboutPoint {
 export const aboutPoint: AboutPoint[] = [
   {
     tittle: "block 1",
-    isi: "Continuous Learning",
+    isi: "Analytical Thinking",
   },
   {
     tittle: "block 2",
-    isi: "High Timeliness",
+    isi: "Problem-Solving",
   },
   {
     tittle: "block 3",
-    isi: "Meticulous Detail",
+    isi: "Teamwork",
   },
   {
     tittle: "block 4",
-    isi: "Agile Teamplay",
+    isi: "Time Management",
+  },
+];
+
+export interface Education {
+  institution: string;
+  program: string;
+  period: string;
+  note?: string;
+}
+
+export const education: Education[] = [
+  {
+    institution: "Purwadhika Digital Technology School",
+    program: "Full-Stack Web Development Program",
+    period: "Aug 2026 – Present",
+    note: "Expected completion: Dec 2026",
+  },
+  {
+    institution: "Harisenin.com",
+    program: "Full Stack Developer Bootcamp",
+    period: "Nov 2025 – Feb 2026",
+  },
+  {
+    institution: "Brawijaya University",
+    program: "Bachelor's Degree, Fisheries Product Technology",
+    period: "Aug 2021 – Aug 2025",
+    note: "GPA 3.39 / 4.00",
   },
 ];
 
 /* skillsSection */
 export interface SkillsLayout {
   tittle: string;
-  img: string;
   hsatu: string;
   paragraph: string;
   spansatu: string;
@@ -107,103 +156,69 @@ export interface SkillsLayout {
 export interface TechCloud {
   title: string;
   box: string;
+  icon: IconType;
+  color: string;
 }
 
 export const skillsLayout: SkillsLayout[] = [
   {
     tittle: "front end",
-    img: "/skills-icon-satu.svg",
     hsatu: "Front-End Engineering",
     paragraph:
-      "Responsive, accessible user interfaces engineered with modern reactive frameworks and precise typography.",
-    spansatu: "React / Next.js",
-    spandua: "TypeScript / ES6+",
-    spantiga: "Tailwind CSS / HTML5",
-    kolompertama: "CSS3",
-    kolomdua: "DOM API",
-    kolomtiga: "Micro-interactions",
+      "Responsive, accessible interfaces built on a component-based architecture, typed end to end and refined with purposeful motion.",
+    spansatu: "React / Next.js (App Router)",
+    spandua: "TypeScript / JavaScript ES6+",
+    spantiga: "Tailwind CSS / HTML5 / CSS3",
+    kolompertama: "Framer Motion",
+    kolomdua: "React Hook Form + Zod",
+    kolomtiga: "React Native (basic)",
   },
   {
     tittle: "Back end",
-    img: "/skills-icon-dua.svg",
-    hsatu: "Back-End Architecture",
+    hsatu: "Back-End Development",
     paragraph:
-      "Fault-tolerant microservices, normalized relational schemas, and hardened REST endpoints.",
+      "RESTful services and relational data models designed for clarity, data integrity, and room to grow.",
     spansatu: "Node.js / Express.js",
-    spandua: "PostgreSQL & Relational DBs",
-    spantiga: "RESTful APIs & Auth",
-    kolompertama: "Django Awareness",
-    kolomdua: "Ruby on Rails",
-    kolomtiga: "Schema Design",
+    spandua: "PostgreSQL / Prisma ORM",
+    spantiga: "RESTful API & CRUD",
+    kolompertama: "Relational DB Design",
+    kolomdua: "SQL",
+    kolomtiga: "WebSocket",
   },
   {
-    tittle: "tools and devops",
-    img: "/skills-icon-tiga.svg",
-    hsatu: "DevOps & Tooling",
+    tittle: "tools and deployment",
+    hsatu: "Tools & Deployment",
     paragraph:
-      "Automated deployment pipelines, cloud provisioning, version control, and rigorous API validation.",
-    spansatu: "Docker & Containers",
-    spandua: "Git & GitHub Workflows",
-    spantiga: "AWS & CI/CD Pipelines",
-    kolompertama: "Postman",
-    kolomdua: "Jenkins",
-    kolomtiga: "Vercel Edge",
+      "A disciplined Git workflow and Git-based continuous deployment to ship features incrementally and reliably.",
+    spansatu: "Git & GitHub Workflow",
+    spandua: "Vercel Deployment (CD)",
+    spantiga: "VS Code",
+    kolompertama: "Branching Strategy",
+    kolomdua: "Mailer Integration",
+    kolomtiga: "Testing & Deployment",
   },
 ];
 
 export const techCloud: TechCloud[] = [
-  {
-    title: "tech1",
-    box: "React",
-  },
-  {
-    title: "tech2",
-    box: "Next.js",
-  },
-  {
-    title: "tech3",
-    box: "TypeScript",
-  },
-  {
-    title: "tech4",
-    box: "Node.js",
-  },
-  {
-    title: "tech5",
-    box: "Express.js",
-  },
-  {
-    title: "tech6",
-    box: "PostgreSQL",
-  },
-  {
-    title: "tech7",
-    box: "Tailwind CSS",
-  },
-  {
-    title: "tech8",
-    box: "Docker",
-  },
-  {
-    title: "tech9",
-    box: "Amazon Web Services",
-  },
-  {
-    title: "tech10",
-    box: "REST APIs",
-  },
-  {
-    title: "tech11",
-    box: "Git Versioning",
-  },
-  {
-    title: "tech12",
-    box: "CI/CD Pipelines",
-  },
-  {
-    title: "tech13",
-    box: "Postman Testing",
-  },
+  { title: "tech1", box: "React", icon: SiReact, color: "#61DAFB" },
+  { title: "tech2", box: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+  { title: "tech3", box: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { title: "tech4", box: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { title: "tech5", box: "HTML5", icon: SiHtml5, color: "#E34F26" },
+  { title: "tech6", box: "CSS3", icon: SiCss, color: "#2965F1" },
+  { title: "tech7", box: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+  { title: "tech8", box: "Framer Motion", icon: SiFramer, color: "#FFFFFF" },
+  { title: "tech9", box: "React Hook Form", icon: SiReacthookform, color: "#EC5990" },
+  { title: "tech10", box: "Zod", icon: SiZod, color: "#6E9BF5" },
+  { title: "tech11", box: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
+  { title: "tech12", box: "Express.js", icon: SiExpress, color: "#FFFFFF" },
+  { title: "tech13", box: "PostgreSQL", icon: SiPostgresql, color: "#699ECA" },
+  { title: "tech14", box: "Prisma ORM", icon: SiPrisma, color: "#FFFFFF" },
+  { title: "tech15", box: "REST API", icon: TbApi, color: "#4FDBC8" },
+  { title: "tech16", box: "Git", icon: SiGit, color: "#F05032" },
+  { title: "tech17", box: "GitHub", icon: SiGithub, color: "#FFFFFF" },
+  { title: "tech18", box: "Vercel", icon: SiVercel, color: "#FFFFFF" },
+  { title: "tech19", box: "VS Code", icon: VscVscode, color: "#23A9F2" },
 ];
 
 /* portofolioSection */
@@ -223,57 +238,41 @@ export interface StarCase {
 /*untuk protofolio */
 interface PortfolioData {
   id: number;
-    projectNumber: string;
-    status: string;
-    title: string;
-    description: string;
-    tags: string[];
-    liveDemoUrl: string;
-    repositoryUrl: string;
-    imgSrc: string;
-    siteUrlText: string;
+  status: string;
+  title: string;
+  description: string;
+  tags: string[];
+  liveDemoUrl: string;
+  repositoryUrl: string;
+  imgSrc: string;
+  siteUrlText: string;
 }
 
-export const portfolioData:  PortfolioData[]= [
+export const portfolioData: PortfolioData[] = [
   {
     id: 1,
-    projectNumber: "PROJECT 01 / 02",
     status: "Live Production",
     title: "Kopi Nusa – Artisanal Coffee Roastery Company Profile",
     description:
-      "Modern web platform and company profile for an Indonesian artisanal coffee roastery, featuring curated specialty beans showcase, coffee cupping schedules, partner inquiry system, and responsive bilingual storytelling.",
+      "A multi-page company profile for an Indonesian artisanal coffee roastery, spanning Home, About Us, Products & Services, Our Team, and a Blog with its own post creation flow. Designed mobile-first with a consistent visual language and published live on Vercel.",
     tags: [
       "Next.js",
       "React",
       "Tailwind CSS",
-      "Vercel",
-      "Responsive Web Design",
       "Backendless",
+      "Responsive Web Design",
+      "Vercel",
     ],
     liveDemoUrl: "https://kopi-nusa-company-profile.vercel.app/",
     repositoryUrl: "https://github.com/muzuijovin/Kopi-Nusa_Company-Profile.git",
-    imgSrc: "/toko-kopi-nusa.PNG", // Kosongkan dulu, isi dengan path gambar nanti (ex: "/images/kopi-nusa.png")
+    imgSrc: "/toko-kopi-nusa.PNG",
     siteUrlText: "kopi-nusa-company-profile.vercel.app",
-  },
-  {
-    id: 2,
-    projectNumber: "PROJECT 02 / 02",
-    status: "Enterprise Case Study",
-    title: "XYZ Retail – Scalable Multi-Tier E-Commerce Platform",
-    description:
-      "Full-featured retail storefront and catalog management platform delivering sub-1.2s load speeds, real-time stock sync, and seamless checkout integrations, resulting in a +35% surge in digital sales volume.",
-    tags: ["React", "Node.js", "MongoDB", "AWS Cloud", "CI/CD Pipeline"],
-    liveDemoUrl: "#",
-    repositoryUrl: "#", // Menggunakan "Request Architecture Deck" pada desain kedua
-    imgSrc: "", // Kosongkan dulu
-    siteUrlText: "xyz-retail.production.internal",
   },
 ];
 
 /*contact */
 export interface ContactMe {
   label: string;
-  imgContact: string;
   contact: string;
   isiContact: string;
   link: string;
@@ -282,31 +281,27 @@ export interface ContactMe {
 export const contactMe: ContactMe[] = [
   {
     label: "email",
-    imgContact: "/contact-email-icon.svg",
     contact: "Email Inquiry",
     isiContact: "jovin.najwan@gmail.com",
     link: "mailto:jovin.najwan@gmail.com",
   },
   {
     label: "linkedin",
-    imgContact: "/contact-linkedin-icon.svg",
     contact: "LinkedIn Profile",
     isiContact: "linkedin.com/in/jovin-najwan-053870289",
     link: "https://www.linkedin.com/in/jovin-najwan-053870289",
   },
   {
     label: "github",
-    imgContact: "/contact-github-icon.svg",
     contact: "GitHub Repositories",
     isiContact: "github.com/muzuijovin",
     link: "https://github.com/muzuijovin",
   },
   {
     label: "location",
-    imgContact: "/contact-lokasi-icon.svg",
     contact: "Primary Location",
-    isiContact: "Indonesia, Jawa Barat",
-    link: "https://www.google.com/maps",
+    isiContact: "Depok, West Java, Indonesia",
+    link: "https://www.google.com/maps/place/Depok,+West+Java",
   },
 ];
 
@@ -315,33 +310,33 @@ export interface Testimonials {
   id: number;
   quote: string;
   initials: string;
+  name: string;
   role: string;
-  company: string;
 }
 
 export const testimonials: Testimonials[] = [
   {
     id: 1,
     quote:
-      "Jovin demonstrates exceptional clarity in breaking down complex backend logic and delivering pristine frontend interfaces. His focus on performance and timeliness makes him an invaluable engineering teammate.",
-    initials: "SM",
-    role: "Senior Engineering Mentor",
-    company: "Purwadhika Digital Technology School",
+      "Jovin approaches every module with genuine curiosity and quiet discipline. He never stops at code that merely works; he asks why it works, refines it until it reads cleanly, and delivers on time. That mindset is what turns a good developer into a dependable one.",
+    initials: "D",
+    name: "Kak Defryan",
+    role: "Lecturer, Purwadhika Digital Technology School",
   },
   {
     id: 2,
     quote:
-      "Working alongside Jovin on fullstack sprints was seamless. His code is impeccably organized, well-documented, and his dedication to team communication kept our delivery ahead of schedule.",
-    initials: "PL",
-    role: "Peer Developer & Project Lead",
-    company: "Agile Team Sprints",
+      "Building alongside Jovin always felt effortless. He communicates with clarity, breaks complex problems into calm, manageable steps, and is generous with his time whenever a teammate gets stuck. He makes the people around him better.",
+    initials: "IO",
+    name: "Ian Ongkoyoyo",
+    role: "Classmate, Full-Stack Web Development Program",
   },
   {
     id: 3,
     quote:
-      "The e-commerce platform delivered by Jovin exceeded our benchmark for mobile responsiveness and real-time inventory tracking. Outstanding technical execution!",
-    initials: "PS",
-    role: "Product Stakeholder",
-    company: "XYZ Retail Expansion",
+      "What sets Jovin apart is his analytical depth, a habit clearly shaped by his research background. He studies a problem carefully before he writes a single line, and the result is work that is structured, thoughtful, and built to last.",
+    initials: "DH",
+    name: "Daffa Hakim",
+    role: "Senior IT",
   },
 ];

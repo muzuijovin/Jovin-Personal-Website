@@ -1,183 +1,156 @@
-import { portfolioData } from "../data/data";
-import { GoDotFill } from "react-icons/go";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { FiCode, FiExternalLink, FiImage } from "react-icons/fi";
+import { portfolioData } from "../data/data";
+import { SectionHeading, ease } from "./motion";
+
+const palette = ["#010E24", "#112036", "#4CD7F6", "#4FDBC8", "#D6E3FF"];
 
 export function PortofolioSection() {
   return (
-    <>
-      <section
-        id="portofolioSection"
-        className="h-max p-12 bg-[#041329] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]"
-      >
-        <div className="flex justify-between items-center">
-          <div>
-            <h3 className="font-label text-[#4FDBC8] text-xs">
-              03 / SELECTED WORKS ---
-            </h3>
-            <h1 className="font-bold font-headline text-4xl text-neutral-100 mt-3">
-              Featured Projects & Architecture
-            </h1>
-          </div>
-          <div className="flex gap-3 p-2  bg-primary-975 rounded-md">
-            <h3 className="font-label font-semibold text-[11px] text-[#BCC9CD]">
-              Theme Palette:
-            </h3>
-            <div className="flex">
-              <GoDotFill className="text-[#010E24] w-5 h-5 cursor-pointer" />
-              <GoDotFill className="text-primary-950 w-5 h-5 cursor-pointer" />
-              <GoDotFill className="text-[#4CD7F6] w-5 h-5 cursor-pointer" />
-              <GoDotFill className="text-[#4FDBC8] w-5 h-5 cursor-pointer" />
-              <GoDotFill className="text-[#D6E3FF] w-5 h-5 cursor-pointer" />
-            </div>
+    <section id="portofolioSection" className="bg-canvas bg-grid">
+      <div className="section-shell">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <SectionHeading
+            index="03"
+            eyebrow="Selected Works"
+            title="Featured Projects & Architecture"
+          />
+          <div
+            aria-hidden
+            className="mb-12 hidden items-center gap-3 self-start rounded-full border border-line bg-surface px-4 py-2 md:mb-16 md:flex md:self-end"
+          >
+            <span className="font-label text-xs font-semibold text-ink-muted">
+              Theme Palette
+            </span>
+            <span className="flex -space-x-1">
+              {palette.map((color) => (
+                <span
+                  key={color}
+                  className="h-4 w-4 rounded-full ring-2 ring-surface"
+                  style={{ backgroundColor: color }}
+                />
+              ))}
+            </span>
           </div>
         </div>
-        {/* container proto */}
-        <div className="max-w-7xl mx-auto flex flex-col gap-12 mt-5">
-          {portfolioData.map((project) => (
-            <div
+
+        <div className="flex flex-col gap-10">
+          {portfolioData.map((project, i) => (
+            <motion.article
               key={project.id}
-              className="w-full bg-primary-950/40 border border-[#1C2A41]/40 rounded-xl p-8 flex flex-col lg:flex-row gap-8 items-center justify-between"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, ease }}
+              className="card grid grid-cols-1 items-center gap-10 bg-card/40 p-6 md:p-10 lg:grid-cols-2"
             >
-              {/* Sisi Kiri: Informasi Proyek */}
-              <div className="flex-1 max-w-152.5 flex flex-col items-start text-left">
-                {/* Badge Status & Nomor Proyek */}
-                <div className="flex items-center gap-3 mb-4 font-tittle text-[11px] font-bold">
-                  <span className="text-[#4CD7F6] tracking-wider">
-                    {project.projectNumber}
+              {/* Project info */}
+              <div
+                className={`flex flex-col items-start ${i % 2 === 1 ? "lg:order-2" : ""}`}
+              >
+                <div className="mb-4 flex flex-wrap items-center gap-3 font-tittle text-xs font-bold">
+                  <span className="tracking-wider text-accent-alt">
+                    PROJECT {String(i + 1).padStart(2, "0")} /{" "}
+                    {String(portfolioData.length).padStart(2, "0")}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[#4FDBC8] bg-[#4FDBC8]/20 text-[11px] font-semibold">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#4FDBC8]"></span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-2.5 py-1 font-semibold text-accent">
+                    <span
+                      className="h-1.5 w-1.5 rounded-full bg-accent"
+                      aria-hidden
+                    />
                     {project.status}
                   </span>
                 </div>
 
-                {/* Judul Proyek */}
-                <h3 className="font-headline text-2xl lg:text-[28px] leading-9 font-semibold text-[#D6E3FF] mb-4 tracking-[-0.7px]">
+                <h3 className="font-headline text-2xl font-semibold leading-tight tracking-tight text-ink lg:text-3xl text-balance">
                   {project.title}
                 </h3>
 
-                {/* Deskripsi Proyek */}
-                <p className="font-label text-[15px] leading-[24.4px] text-[#BCC9CD] font-regular mb-6">
+                <p className="mt-4 font-label text-base leading-relaxed text-ink-muted">
                   {project.description}
                 </p>
 
-                {/* Tags Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="font-label text-[11px] font-semibold px-2.5 py-1 rounded bg-primary-950 text-[#BCC9CD] border border-[#1C2A41]/30"
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <li
+                      key={tag}
+                      className="rounded-md border border-line/60 bg-card px-2.5 py-1 font-label text-xs font-semibold text-ink-muted"
                     >
                       {tag}
-                    </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
 
-                {/* Tombol Aksi */}
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="mt-8 flex flex-wrap items-center gap-3">
                   <Link
                     href={project.liveDemoUrl}
                     target="_blank"
-                    className="inline-flex items-center justify-center font-label text-xs font-semibold px-4 py-2.5 rounded bg-[#4CD7F6] text-[#00424F] hover:bg-[#45c3de] transition-colors"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-11 items-center gap-2 rounded-lg bg-accent-alt px-5 font-label text-sm font-semibold text-on-accent transition-transform hover:scale-[1.03] active:scale-[0.97]"
                   >
-                    {/* Icon Live Demo */}
-                    <svg
-                      className="w-4 h-4 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                    {project.id === 2
-                      ? "Request Architecture Deck"
-                      : "Live Demo"}
+                    <FiExternalLink className="h-4 w-4" aria-hidden />
+                    Live Demo
                   </Link>
-
                   <Link
                     href={project.repositoryUrl}
-                     target="_blank"
-                    className="inline-flex items-center justify-center font-label text-xs font-semibold px-4 py-2.5 rounded border border-[#1C2A41] text-[#BCC9CD] hover:bg-primary-950 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-11 items-center gap-2 rounded-lg border border-line px-5 font-label text-sm font-semibold text-ink-muted transition-colors hover:border-accent/50 hover:text-ink"
                   >
-                    {/* Icon Repository */}
-                    <svg
-                      className="w-4 h-4 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                      />
-                    </svg>
+                    <FiCode className="h-4 w-4" aria-hidden />
                     View Repository
                   </Link>
                 </div>
               </div>
 
-              {/* Sisi Kanan: Preview Gambar / Mockup Browser */}
-              <div className="flex-1 w-full max-w-125 flex flex-col rounded-lg bg-[#080f19] border border-[#1C2A41]/50 overflow-hidden shadow-2xl">
-                {/* Header Bar Browser Mockup */}
-                <div className="w-full bg-[#0d1624] px-4 py-2 flex items-center justify-between border-b border-[#1C2A41]/30">
-                  {/* Tombol Tiga Titik Browser */}
-                  <div className="flex gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#ef4444]/70"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#eab308]/70"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e]/70"></span>
+              {/* Browser mockup preview */}
+              <motion.div
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 260, damping: 22 }}
+                className={`group w-full overflow-hidden rounded-xl border border-line/60 bg-[#080f19] shadow-2xl ${i % 2 === 1 ? "lg:order-1" : ""}`}
+              >
+                <div className="flex items-center gap-3 border-b border-line/40 bg-[#0d1624] px-4 py-2.5">
+                  <div className="flex gap-1.5" aria-hidden>
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#ef4444]/70" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#eab308]/70" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#22c55e]/70" />
                   </div>
-                  {/* URL Bar */}
-                  <div className="font-tittle text-[11px] text-[#BCC9CD]/60 px-6 py-0.5 bg-[#060b13] rounded-md border border-[#1C2A41]/20 max-w-60 truncate">
+                  <div className="mx-auto min-w-0 max-w-xs truncate rounded-md border border-line/30 bg-[#060b13] px-4 py-0.5 font-tittle text-xs text-ink-muted/70">
                     {project.siteUrlText}
                   </div>
-                  {/* Placeholder Spacing */}
-                  <div className="w-10"></div>
+                  <div className="w-10" aria-hidden />
                 </div>
 
-                {/* Area Gambar Portofolio */}
-                <div className="relative w-full aspect-4/3 bg-primary-950/20 flex items-center justify-center">
+                <div className="relative flex aspect-4/3 w-full items-center justify-center overflow-hidden bg-card/20">
                   {project.imgSrc ? (
                     <Image
                       src={project.imgSrc}
-                      alt={project.title}
+                      alt={`Screenshot of ${project.title}`}
                       fill
-                      className="object-cover"
+                      sizes="(min-width: 1024px) 560px, 100vw"
+                      className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   ) : (
-                    // Tampilan fallback jika gambar belum Anda isi
-                    <div className="text-center p-6">
-                      <svg
-                        className="mx-auto h-12 w-12 text-[#BCC9CD]/30"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1}
-                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                        />
-                      </svg>
-                      <p className="mt-2 text-xs text-[#BCC9CD]/40 font-label">
-                        Tempatkan gambar Anda di sini nanti
+                    <div className="p-6 text-center">
+                      <FiImage
+                        className="mx-auto h-12 w-12 text-ink-muted/30"
+                        aria-hidden
+                      />
+                      <p className="mt-2 font-label text-sm text-ink-muted/60">
+                        Preview coming soon
                       </p>
                     </div>
                   )}
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.article>
           ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

@@ -19,7 +19,7 @@ export function TestimonialsSection() {
 
         <Stagger
           delay={0.1}
-          className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-5 md:grid-cols-2"
         >
           {testimonials.map((item) => (
             <StaggerItem key={item.id}>

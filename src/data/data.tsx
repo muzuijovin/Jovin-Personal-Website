@@ -339,4 +339,12 @@ export const testimonials: Testimonials[] = [
     name: "Daffa Hakim",
     role: "Senior IT",
   },
+  {
+    id: 4,
+    quote:
+      "Jovin writes code with the next developer in mind: clear naming, tidy components, and commits that tell a story. He welcomes feedback with an open mind, applies it quickly, and is always eager to learn the right way rather than the fast way.",
+    initials: "BC",
+    name: "Besty Cintara",
+    role: "Junior Software Developer",
+  },
 ];

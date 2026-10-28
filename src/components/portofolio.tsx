@@ -132,6 +132,7 @@ export function PortofolioSection() {
                       alt={`Screenshot of ${project.title}`}
                       fill
                       sizes="(min-width: 1024px) 560px, 100vw"
+                      quality={90}
                       className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   ) : (

@@ -1,116 +1,182 @@
-import { buttonNavbar } from "../data/data";
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+import { FiGithub, FiMenu, FiX } from "react-icons/fi";
+import { buttonNavbar } from "../data/data";
+import { ease } from "./motion";
+
 export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+
+  // Solid background once the page is scrolled
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Highlight the nav item for the section currently in view
+  useEffect(() => {
+    const sections = buttonNavbar
+      .map((menu) => document.querySelector(menu.url))
+      .filter((el): el is Element => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  // Close the mobile menu with Escape
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
-    <>
-      <section className="navbar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-[#041329] px-6 py-4 bg-[repeating-linear-gradient(45deg,#000_0,#000_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-opacity-5">
-        <div className=" flex items-center gap-5 ">
-          <div className="dropdown">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn bg-primary-900 hover:opacity-65 md:hidden lg:hidden"
-            >
-              <svg
-                aria-label="Menu"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-neutral-100"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {" "}
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />{" "}
-              </svg>
-            </div>
-            <ul
-              tabIndex={-1}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-            >
-              <li>
-                <Link href="#aboutSection">about</Link>
-              </li>
-              <li>
-                <Link href="#skillsSection">skills</Link>
-              </li>
-              <li>
-                <Link href="#portofolioSection">portofolio</Link>
-              </li>
-              <li>
-                <Link href="#experienceSection">experience</Link>
-              </li>
-              <li>
-                <Link href="#testimonialsSection">testimonials</Link>
-              </li>
-              <li>
-                <Link href="#contactSection">contact</Link>
-              </li>
-            </ul>
-          </div>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        scrolled || open
+          ? "border-b border-line/60 bg-canvas/85 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
+      <nav
+        aria-label="Main"
+        className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 md:px-10"
+      >
+        <Link
+          href="/"
+          className="flex items-center gap-3 rounded-md"
+          aria-label="Jovin Najwan, back to top"
+        >
+          <Image
+            src="/logo-jn-hd.png"
+            alt=""
+            width={40}
+            height={40}
+            unoptimized
+            className="h-10 w-10 rounded-xl object-cover"
+          />
+          <span className="flex flex-col leading-tight">
+            <span className="font-headline text-base font-bold text-ink md:text-lg">
+              Jovin Najwan
+            </span>
+            <span className="font-tittle text-[11px] tracking-wider text-accent">
+              FULL-STACK DEV
+            </span>
+          </span>
+        </Link>
 
-          <div className="h9 w-9 rounded-2xl overflow-hidden cursor-pointer">
-            <img
-              src="/logo-jn-satu.jpg"
-              alt="logo"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="">
-            <Link href="/">
-              <h1 className="font-headline text-lg md:text-xl text-neutral-100">
-                Jovin Najwan
-              </h1>
-            </Link>
-
-            <Link href="/">
-              <h2 className="font-label text-[#4FDBC8] font-semibold text-[9px] md:text-[11px]">
-                FULL-STACK <br /> DEVELOPER
-              </h2>
-            </Link>
-          </div>
-        </div>
-        <div className="hidden md:flex md:gap-2">
+        <ul className="hidden items-center gap-1 lg:flex">
           {buttonNavbar.map((menu) => {
+            const isActive = active === menu.url;
             return (
-              <Link key={menu?.label} href={menu?.url}>
-                <button className="btn btn-info rounded-md font-label">
-                  {menu?.label}
-                </button>
-              </Link>
+              <li key={menu.label}>
+                <Link
+                  href={menu.url}
+                  aria-current={isActive ? "true" : undefined}
+                  className={`relative inline-flex h-10 items-center rounded-md px-3 font-label text-sm transition-colors ${
+                    isActive ? "text-ink" : "text-ink-muted hover:text-ink"
+                  }`}
+                >
+                  {menu.tittle}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-indicator"
+                      className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-accent"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              </li>
             );
           })}
+        </ul>
+
+        <div className="flex items-center gap-2">
+          <Link
+            href="https://github.com/muzuijovin/Jovin-Personal-Website.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View source on GitHub"
+            className="hidden h-10 w-10 items-center justify-center rounded-md text-ink-muted transition-colors hover:bg-card hover:text-ink sm:inline-flex"
+          >
+            <FiGithub className="h-5 w-5" aria-hidden />
+          </Link>
+          <Link
+            href="#contactSection"
+            className="hidden h-10 items-center rounded-md bg-accent-alt px-4 font-label text-sm font-semibold text-on-accent transition-transform hover:scale-[1.03] active:scale-[0.97] sm:inline-flex"
+          >
+            Hire Me
+          </Link>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-md bg-card text-ink lg:hidden"
+          >
+            {open ? (
+              <FiX className="h-5 w-5" aria-hidden />
+            ) : (
+              <FiMenu className="h-5 w-5" aria-hidden />
+            )}
+          </button>
         </div>
+      </nav>
 
-        <div className="flex items-center gap-4 pl-2 pr-2">
-          <div className="hidden lg:bg-primary-900 lg:hover:opacity-65 lg:rounded-lg lg:w-7 lg:h-7 lg:flex lg:justify-center lg:items-center lg:cursor-pointer">
-            <Link href="https://github.com/muzuijovin/Jovin-Personal-Website.git">
-              <img src="/navbar-logo-github.svg" alt="share" />
-            </Link>
-          </div>
-
-          <div className="hidden lg:block">
-            <Link href="#formContact">
-              <button className="lg:btn lg:btn-info lg:font-label ">
-                Hire Me
-              </button>
-            </Link>
-          </div>
-
-          <div className="w-9 h-9 cursor-pointer rounded-xl overflow-hidden">
-            <img
-              src="/foto-jovin-najwan.jpg"
-              alt="profile-photo"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
-    </>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0, transition: { duration: 0.25, ease } }}
+            exit={{ opacity: 0, y: -8, transition: { duration: 0.15 } }}
+            className="border-t border-line/60 lg:hidden"
+          >
+            <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4">
+              {buttonNavbar.map((menu) => (
+                <li key={menu.label}>
+                  <Link
+                    href={menu.url}
+                    onClick={() => setOpen(false)}
+                    className={`flex h-12 items-center rounded-md px-3 font-label text-base transition-colors hover:bg-card ${
+                      active === menu.url ? "text-accent" : "text-ink"
+                    }`}
+                  >
+                    {menu.tittle}
+                  </Link>
+                </li>
+              ))}
+              <li className="mt-2">
+                <Link
+                  href="#contactSection"
+                  onClick={() => setOpen(false)}
+                  className="flex h-12 items-center justify-center rounded-md bg-accent-alt font-label font-semibold text-on-accent"
+                >
+                  Hire Me
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 }

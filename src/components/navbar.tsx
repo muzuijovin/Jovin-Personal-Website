@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FiGithub, FiMenu, FiX } from "react-icons/fi";
 import { buttonNavbar } from "../data/data";
 import { ease } from "./motion";
+import { NotificationBell } from "./notification-bell";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -109,6 +110,7 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <NotificationBell />
           <Link
             href="https://github.com/muzuijovin/Jovin-Personal-Website.git"
             target="_blank"

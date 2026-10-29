@@ -62,6 +62,41 @@ export const buttonNavbar: ButtonNavbar[] = [
   },
 ];
 
+/* Navbar notifications (bell). Add new updates at the top. */
+export interface Notification {
+  id: number;
+  tag: string;
+  title: string;
+  description: string;
+  href: string;
+}
+
+export const notifications: Notification[] = [
+  {
+    id: 3,
+    tag: "In Progress",
+    title: "Building SportTicketing",
+    description:
+      "A full-stack sports event ticketing platform with Next.js, Express, PostgreSQL and Prisma.",
+    href: "#aboutSection",
+  },
+  {
+    id: 2,
+    tag: "Live",
+    title: "Kopi Nusa is live",
+    description:
+      "Company profile for an artisanal coffee roastery, with an admin blog CMS.",
+    href: "#portofolioSection",
+  },
+  {
+    id: 1,
+    tag: "Open to Work",
+    title: "Available for full-time & internship roles",
+    description: "Let's talk about how I can help your team ship.",
+    href: "#contactSection",
+  },
+];
+
 /* heroSection */
 
 export interface PointPlus {

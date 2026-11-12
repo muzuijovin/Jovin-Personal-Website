@@ -73,12 +73,12 @@ export interface Notification {
 
 export const notifications: Notification[] = [
   {
-    id: 3,
-    tag: "In Progress",
-    title: "Building SportTicketing",
+    id: 4,
+    tag: "New Project",
+    title: "JOVLEN is live",
     description:
-      "A full-stack sports event ticketing platform with Next.js, Express, PostgreSQL and Prisma.",
-    href: "#aboutSection",
+      "My full-stack sports event ticketing platform built with Next.js, Express, PostgreSQL and Prisma.",
+    href: "#portofolioSection",
   },
   {
     id: 2,
@@ -278,12 +278,48 @@ interface PortfolioData {
   description: string;
   tags: string[];
   liveDemoUrl: string;
-  repositoryUrl: string;
+  repositories: { label: string; url: string }[];
   imgSrc: string;
   siteUrlText: string;
 }
 
 export const portfolioData: PortfolioData[] = [
+  {
+    id: 2,
+    status: "Live Production",
+    title: "JOVLEN – Full-Stack Sports Event Ticketing Platform",
+    description:
+      "An end-to-end ticketing platform for running, football and esports events with two roles. Customers browse events with shareable URL filters, check out with vouchers and referral points, upload proof of payment, and receive e-tickets and reviews after the event. Event Organizers create events and vouchers, verify payments, and track sales, while a cron scheduler auto-expires unpaid transactions and email plus in-app notifications keep everyone updated.",
+    tags: [
+      "Next.js 16",
+      "TypeScript",
+      "Tailwind CSS",
+      "TanStack Query",
+      "Zustand",
+      "React Hook Form + Zod",
+      "Express 5",
+      "PostgreSQL",
+      "Prisma 7",
+      "JWT Auth",
+      "Cloudinary",
+      "Nodemailer",
+      "node-cron",
+      "Vercel",
+    ],
+    liveDemoUrl: "https://jovlen-event-sport-ticketing.vercel.app/",
+    repositories: [
+      {
+        label: "Frontend Repo",
+        url: "https://github.com/muzuijovin/MINPRO_FRONTEND",
+      },
+      {
+        label: "Backend Repo",
+        url: "https://github.com/muzuijovin/MINPRO_BACKEND",
+      },
+    ],
+    imgSrc: "/jovlen-preview.webp",
+    siteUrlText: "jovlen-event-sport-ticketing.vercel.app",
+  },
   {
     id: 1,
     status: "Live Production",
@@ -302,7 +338,12 @@ export const portfolioData: PortfolioData[] = [
       "Vercel",
     ],
     liveDemoUrl: "https://kopi-nusa-company-profile.vercel.app/",
-    repositoryUrl: "https://github.com/muzuijovin/Kopi-Nusa_Company-Profile",
+    repositories: [
+      {
+        label: "View Repository",
+        url: "https://github.com/muzuijovin/Kopi-Nusa_Company-Profile",
+      },
+    ],
     imgSrc: "/kopi-nusa-preview.webp",
     siteUrlText: "kopi-nusa-company-profile.vercel.app",
   },

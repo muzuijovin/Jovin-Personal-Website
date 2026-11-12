@@ -75,8 +75,8 @@ export function AboutSection() {
                   aria-hidden
                 />
                 <p className="font-label text-sm leading-relaxed text-ink">
-                  <span className="font-semibold">Currently building</span>{" "}
-                  SportTicketing, a full-stack sports event ticketing platform
+                  <span className="font-semibold">Latest launch:</span>{" "}
+                  JOVLEN, a full-stack sports event ticketing platform built
                   with Next.js, Express.js, PostgreSQL and Prisma.
                 </p>
               </div>

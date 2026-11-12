@@ -95,15 +95,18 @@ export function PortofolioSection() {
                     <FiExternalLink className="h-4 w-4" aria-hidden />
                     Live Demo
                   </Link>
-                  <Link
-                    href={project.repositoryUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex h-11 items-center gap-2 rounded-lg border border-line px-5 font-label text-sm font-semibold text-ink-muted transition-colors hover:border-accent/50 hover:text-ink"
-                  >
-                    <FiCode className="h-4 w-4" aria-hidden />
-                    View Repository
-                  </Link>
+                  {project.repositories.map((repo) => (
+                    <Link
+                      key={repo.url}
+                      href={repo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-11 items-center gap-2 rounded-lg border border-line px-5 font-label text-sm font-semibold text-ink-muted transition-colors hover:border-accent/50 hover:text-ink"
+                    >
+                      <FiCode className="h-4 w-4" aria-hidden />
+                      {repo.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
 

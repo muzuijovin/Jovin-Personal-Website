@@ -73,8 +73,16 @@ export interface Notification {
 
 export const notifications: Notification[] = [
   {
-    id: 4,
+    id: 5,
     tag: "New Project",
+    title: "Pinkara Studio is live",
+    description:
+      "A full-stack e-commerce site for a florist in Malang: checkout, QRIS/VA payments, shipping, custom orders and an admin panel.",
+    href: "#portofolioSection",
+  },
+  {
+    id: 4,
+    tag: "Live",
     title: "JOVLEN is live",
     description:
       "My full-stack sports event ticketing platform built with Next.js, Express, PostgreSQL and Prisma.",
@@ -284,6 +292,34 @@ interface PortfolioData {
 }
 
 export const portfolioData: PortfolioData[] = [
+  {
+    id: 3,
+    status: "Live Production",
+    title: "Pinkara Studio – Full-Stack Florist E-Commerce",
+    description:
+      "An online shop for Pinkara Studio, a florist in Malang, that replaced order-by-WhatsApp with one end-to-end flow. Buyers filter the catalog with shareable URLs, pick variants and add-ons, pin their address on a map for live JNE/J&T rates from Biteship, and pay by QRIS or virtual account through Midtrans, then track every order. Custom bouquets go through a brief, chat and quote, and the owner runs everything from an admin dashboard. Idempotency keys, row locks, verified webhooks and expiry jobs keep money and stock correct, backed by 370+ automated tests.",
+    tags: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "TanStack Query",
+      "React Hook Form + Zod",
+      "Express 5",
+      "PostgreSQL (Supabase)",
+      "Prisma 7",
+      "Midtrans",
+      "Biteship",
+      "Google Sign-In",
+      "Cloudinary",
+      "Leaflet",
+      "Vercel",
+    ],
+    liveDemoUrl: "https://pinkara-studio.vercel.app/",
+    repositories: [],
+    imgSrc: "/pinkara-preview.webp",
+    siteUrlText: "pinkara-studio.vercel.app",
+  },
   {
     id: 2,
     status: "Live Production",

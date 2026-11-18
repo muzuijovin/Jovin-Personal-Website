@@ -76,7 +76,8 @@ export function AboutSection() {
                 />
                 <p className="font-label text-sm leading-relaxed text-ink">
                   <span className="font-semibold">Latest launch:</span>{" "}
-                  JOVLEN, a full-stack sports event ticketing platform built
+                  Pinkara Studio, a full-stack e-commerce site for a florist in
+                  Malang with Midtrans payments and Biteship shipping, built
                   with Next.js, Express.js, PostgreSQL and Prisma.
                 </p>
               </div>
